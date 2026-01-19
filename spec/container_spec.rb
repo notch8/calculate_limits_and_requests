@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'prometheus'
 RSpec.describe Container do
   include_context 'with access to prometheus'

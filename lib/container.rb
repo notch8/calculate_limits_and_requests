@@ -30,7 +30,7 @@ class Container
       :fcrepo
     when /fits|solr|elasticsearch/
       :java_app
-    when /nginx/
+    when /nginx|webhook/
       :utility
     when /hyrax|hyku|rails|puma|passenger|worker|sidekiq|job|cable|clockwork|web/
       :rails_app

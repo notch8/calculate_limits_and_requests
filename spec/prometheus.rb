@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'with access to prometheus', prometheus: :metadata do
   let(:cpu_95_prometheus_client) { PrometheusClient.new(quantile: 0.95, compute_type: 'cpu') }
   let(:cpu_99_prometheus_client) { PrometheusClient.new(quantile: 0.99, compute_type: 'cpu') }

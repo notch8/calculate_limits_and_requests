@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'with access to kubernetes', kubernetes: :metadata do
   let(:calculator) { CalculateResources.new }
 
