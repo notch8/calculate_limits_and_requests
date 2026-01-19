@@ -1,0 +1,8 @@
+# Ignore testing and debugging artifacts
+.byebug_history
+spec/examples.txt
+spec/fixtures/original_backups
+
+# Ignore output
+right-sizing-output.csv
+

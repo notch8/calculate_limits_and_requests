@@ -1,0 +1,6142 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-2c27w",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://7a92c63742675dc745a4eb1533e4d9c5b848661c70713dc76a321bd06ad8fb90"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-5b8gd",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://e573c5b008839acf200da6a0234e8482d6c136c337e0a96e722edbc37a635eef"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-677cn",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://3b26f3ccbc26dae1fdafec9a34c8c6a766382b8db26317a2027853b4ee41cc26"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-clh72",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6112e759226db02a8db7534ef9076ecec73502db99d624f88c34b563bd00e7c0"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-lwcdb",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://656a8b84513714811249f535d72321c0029e4ed8c98740d5c7432cfb37bc4c9b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-m4m5s",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a0a91beab68bfac759da3f41024100c03e8f265fedb3e0820ff7100b064e6039"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-canary-rpf8d",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-canary"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "loki-canary",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b61e8bd260eac395ef14578a5c0edb38c818edd0d222110081330a2bab02a88d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-gateway-794dbb44b-m49fw",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "loki-gateway-794dbb44b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c6e4a6eb416e5e39925dbbcab2ef52bfbe90670aca9eea94e90451c476a443d2"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-grafana-agent-operator-9b94b57bf-7zrm2",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "loki-grafana-agent-operator-9b94b57bf"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "grafana-agent-operator",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://647a864d82a075b8a247dd81dd46eb9df1aef7100232becfbc150171206faf19"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-9rfsw",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://65d5aaf2e20e499939c545f6253ddf63d9ce16056672b7b3e3230380b73a273c"
+          },
+          {
+            "containerID": "containerd://4616789a1582cfeedb411acc34815e628f28d1e0a119a5c02c771809a862ffbf"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-hl2kp",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0cd63208dfa4298d450458c1d83ffaddec39f3c026a93eaae7034a15abaf5343"
+          },
+          {
+            "containerID": "containerd://4b72139d4e2b7d092edd4a8652e916582900b58063127ac2494d1380bb6b1d8f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-j5sw2",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://49145a8c49a43b10ddaa7f4b7577dbdb87e2972244635711dd7816cf88b93d92"
+          },
+          {
+            "containerID": "containerd://cf40e9565d6f85ed6a14acfcd40360904ca77991d1d620db16708d2b2df9d371"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-r5zfz",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8c6bdb03cd0697dc9fdd30373b9a0a745ae822454e5a1b364e295c672b72782c"
+          },
+          {
+            "containerID": "containerd://4a425fc558a085e1f17ca3556fd9b029cf1fd82af02abd394228ebe29cf84364"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-sg4mc",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://64170b314db61fa34a69a563f6431decd2cacf5b782e662aac8db3677f0be092"
+          },
+          {
+            "containerID": "containerd://b4d59ef078eb387b2e23f6d646740996337c70f7a4da0d0bd3c4127fbdf1294a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-vrf9w",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://9c2ef6c68c33c1a04e6c6c8ce3b61829ee156b33139289540c5b434f016429cb"
+          },
+          {
+            "containerID": "containerd://976005c40e457eab0674f0adb8468d464142e2e638ab736733cb6715b267b48e"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-logs-wkwxr",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "loki-logs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "grafana-agent",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://bfc0af642e58676c3c8ec2ba83485335f3e93f6b3b86617eb08015922a02fae6"
+          },
+          {
+            "containerID": "containerd://585427b08e3f99e814610ce598dfcd2f9eb967c4a8aca73a462376e9cfebb789"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-read-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "loki-read"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "read",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8862eae118fa669b4e37ac510de7176f3ff0b6167b9d367a78873a49cc811a8d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-read-1",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "loki-read"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "read",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1f77a2b9c274230d9f4ce38c48ccb1fd7a3effbd874764eb12e4c57e6aa6c417"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-write-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "loki-write"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "write",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://827218b9085cd4d08009a2910a70a28e9b6ef85fba066c190ff454c53e2ef451"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-write-1",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "loki-write"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "write",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://e4458a50f8fe1bf8f012d0e869bb841f637e5f8b692371f5aa665174a832aac0"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "loki-write-2",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "loki-write"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "write",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c3c3b4ad2cee93fce2f7946c343a7ca6984470cc9478a942de51f51a6b00f065"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-49m2j",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://51a145beb0dff83ba9bc04ff9531225230e9732f9d970a9c6ab7f245f62c0397"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-4c64t",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d0adbbfa7ed3e4c975683fd926fcb8b6de06dd2cf5c4d6b32d33f642adad83da"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-57v5g",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://83994f9557a987f667bcd9cb7e85f9c85e3d3976c319e72b936ac38af6050d9f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-6224f",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c30f07cc49a62bd65060c7e8d3ec466551f13375634d13389d10534e2687aa80"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-b9nss",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://90a9c7099a374b2c44d9d1dc9547c06886276e5288ecc94ad54fff72326e08c1"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-fkrgk",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://efcd567e709736b5baa7700cc9f41700269b7cb35b6040c1aeedba5007446b61"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-logging-system",
+        "name": "promtial-promtail-gcjzm",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "promtial-promtail"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "promtail",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://940e7688e4a90c14d8138f338780bb0f116efb33e2530d26d94bf19ce9f85ac4"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "alertmanager-rancher-monitoring-alertmanager-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "alertmanager-rancher-monitoring-alertmanager"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "alertmanager",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "500Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "100Mi"
+              }
+            }
+          },
+          {
+            "name": "config-reloader",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c03b6ba3fc4ede60862d1cde1662cd41193c4666984ebaa3189a3074886e69ba"
+          },
+          {
+            "containerID": "containerd://72807432d416128b2fd517a462c228ab7233e9149789aacb57b471194b0f4508"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "prometheus-rancher-monitoring-prometheus-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "prometheus-rancher-monitoring-prometheus"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "prometheus",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "3000Mi"
+              },
+              "requests": {
+                "cpu": "750m",
+                "memory": "750Mi"
+              }
+            }
+          },
+          {
+            "name": "config-reloader",
+            "resources": {}
+          },
+          {
+            "name": "prometheus-proxy",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c5ae469a9ddf45c60e5f7fb5e5d09380c32fafaa42b0b1c392aedfcc70de69fb"
+          },
+          {
+            "containerID": "containerd://a0f8de1a2c68875ce579da6db842179ffe3707b3c05c6f4481a0c8d89150657f"
+          },
+          {
+            "containerID": "containerd://89aa8ae4c01dfcb2aee106d5bf38bcb644888c63b9d9f3ad8c943213124747e1"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-grafana-647b46546b-z982d",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "rancher-monitoring-grafana-647b46546b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "grafana-sc-dashboard",
+            "resources": {}
+          },
+          {
+            "name": "grafana",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "200Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "100Mi"
+              }
+            }
+          },
+          {
+            "name": "grafana-proxy",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8cfafd28bf38bb7338221678494fb88c349e4bb888773dd2072e0b0836ea9727"
+          },
+          {
+            "containerID": "containerd://1ad58e8755c416d214cd5b996a35716771c5453169fc44ad88ee0f2b4ceae76a"
+          },
+          {
+            "containerID": "containerd://436f2c7919d388633add25168244c82c4f5b8260798de313e7c036fc70dd8fe3"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-kube-state-metrics-5646bbc87f-4bhtl",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "rancher-monitoring-kube-state-metrics-5646bbc87f"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-state-metrics",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8ab5cd7fbf5762e6311490b9592445e359aed95a171b51300270b34a73a58f5a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-operator-5dc4ff5874-qt572",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "rancher-monitoring-operator-5dc4ff5874"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "rancher-monitoring",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://096f261545402f404de20ac4901a8ae27100940a3f1af9f1b965a726b4084c23"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-adapter-6854846cc5-2r72x",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "rancher-monitoring-prometheus-adapter-6854846cc5"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "prometheus-adapter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a8576e5ba7ae86226155bf85661f2aa9374e9bf95b26c97918ed46a55dd242bb"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-bhd8h",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://894c98f8faeecf05e9c3a7fc8b0aca7b667150e423b90e000a24ed853e894a7a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-cp8w5",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://687693dec22d3c7707480f96f0956f20b138a1e190580ffe6ec886cc479e444c"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-cr5m6",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8b350d97995d2d0d16ede843d5f635c8ec333fb450977e4f1cb789da2b9bb33f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-fz55q",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c224c1dccbd668d6ac1d282f4fd6ea93e7c34beef2e979dfae569caa696cec2d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-hlzlj",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://e48a0edb5738dd3f0ac8a91d6eb3f5c7506fb47e60216ad362dc98339388a25b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-q7jmx",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://44afa74a5f3fc7ff748c5857e2bb839d8ab2d82b21fac586f535795c330e64e8"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-monitoring-system",
+        "name": "rancher-monitoring-prometheus-node-exporter-xrk62",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "rancher-monitoring-prometheus-node-exporter"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-exporter",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://412bc353e4e69714ac6f5b788bb23bd43d485cf1b9aa1a21ff8439fece55cfc2"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-system",
+        "name": "cattle-cluster-agent-7999ddcc69-2hnkt",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "cattle-cluster-agent-7999ddcc69"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cluster-register",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0ccefe8d85214edcf2e27d252ecf541824940b2192c9d9900e8d9deb778876e6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-system",
+        "name": "cattle-cluster-agent-7999ddcc69-nfvxk",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "cattle-cluster-agent-7999ddcc69"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cluster-register",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6b6c48f375154ce98a2ea1c2e36a2009fcb6095eb8c36aa158710643605dbf14"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cattle-system",
+        "name": "rancher-webhook-957b9bb45-vw7qt",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "rancher-webhook-957b9bb45"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "rancher-webhook",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8d75e3a604f73cd063f6b8d82b06ef0295e0e3f9b723dc02b61390fc2bef3464"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cert-manager",
+        "name": "cert-manager-69ddc6d659-b62vp",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "cert-manager-69ddc6d659"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cert-manager",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://05369c2ec312f7a7933f78e752b17515578d03d6e83e3098c33672718a3d1324"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cert-manager",
+        "name": "cert-manager-cainjector-7fc5895d58-f2d57",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "cert-manager-cainjector-7fc5895d58"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cert-manager",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2112748916d3bea2708ba343bf323cfbf6f70d7f149a66865fcac0c58e98db71"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "cert-manager",
+        "name": "cert-manager-webhook-88cd996b9-cw4h8",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "cert-manager-webhook-88cd996b9"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cert-manager",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://eaaefc17858aae6d4992bb533ba4ee328dddac583577b89a82f45533056561fe"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "default",
+        "name": "kubernetes-replicator-6f876cddd4-dt5rx",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "kubernetes-replicator-6f876cddd4"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kubernetes-replicator",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2107ff96e0750edd53dd02a84794dc83a6626d03bad7204f7914f4f829b578a0"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "default",
+        "name": "metrics-server-6b6d5b646-6lrz2",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "metrics-server-6b6d5b646"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "metrics-server",
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "200Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://5bac26bc059bcd4b41d89073a4622b6fcb2ae596bbf63fdab1508fc33696509a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "external-secrets",
+        "name": "external-secrets-operator-r2-friends-cluster-846bf69df8-s5zsm",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "external-secrets-operator-r2-friends-cluster-846bf69df8"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "external-secrets",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8675f8f4dba1f257e7523eab286c608c72c262ed942012cd064adea06ed57e7d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "external-secrets",
+        "name": "external-secrets-operator-r2-friends-cluster-cert-controllqz7kh",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "external-secrets-operator-r2-friends-cluster-cert-controller-8467f4cbff"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cert-controller",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://53835139a0a86c54e9411fa2cb12f971ae3ee4c68de0b9c40c1eed07b6b65780"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "external-secrets",
+        "name": "external-secrets-operator-r2-friends-cluster-webhook-55df779h75",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "external-secrets-operator-r2-friends-cluster-webhook-55df757bc9"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "webhook",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://48f405d977067aac091c2eadf05869e013f2eaba22b41e8e0b8492d3cdb6ec13"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "fcrepo",
+        "name": "fcrepo-7c88fc5dfc-5zmkv",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "fcrepo-7c88fc5dfc"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fcrepo",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "3Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "1536Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://84ed1c952fb68e38a0503a349c93160346f6f2df0eca5e214129120aeb0e7393"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-gc-j9f5k-5zxhw",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-gc-j9f5k-5zxhw"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a7e767c8d96c838c5e5eba7f669569419b874150cb13eed0321647fd097c3325"
+          },
+          {
+            "containerID": "containerd://52265db4bf580021e5290bd3da8f62b8a15e065d5b064f404f5992215489758b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-gc-j9f5k-9bddc",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-gc-j9f5k-9bddc"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6361eac867ca4aebde789831b7edf20ab5861a602ad3148657ef8531bcc9a5cf"
+          },
+          {
+            "containerID": "containerd://0840833fe149220bba5258c8b3e5b2a2be9285905f066ba68a62d5d4b2a9ecca"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-gc-j9f5k-dpvkr",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-gc-j9f5k-dpvkr"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1c5d03a0a268a98b1c43c3a46bb4b4a3d2e5ebeb75f0a71dc0c4eb77336f5208"
+          },
+          {
+            "containerID": "containerd://32fedb69ebf75445bc072c38f067ed7b5254036b1e11a7ab1af3277dd5a062ff"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-gc-j9f5k-sbm8c",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-gc-j9f5k-sbm8c"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c831941f7a1742a958c3a0fbf72ac120e1c59898284a490357ae696cc780547f"
+          },
+          {
+            "containerID": "containerd://cdca886a4e47345c9636fd0cfee1a5b2d23590bf16ff34ba1fb5d7aed592a780"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-zwffm-5cwrx",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-zwffm-5cwrx"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://49bf53f66a4b57a927b0e6430dcf394f86b664fbdb581bf35dd0847080af5fb3"
+          },
+          {
+            "containerID": "containerd://562ffd1dd2c3ab61f6b2f369822a5b4761fecb90fcd53a3c0573dd51cc85d63d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-zwffm-9hfkz",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-zwffm-9hfkz"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://379476b40bc591177369fd284eb876e95e444b09c1f4047152571b334f440626"
+          },
+          {
+            "containerID": "containerd://aa76e1679d0564d17b4ea0bb8a8151c75760931f946fb742a8dec82d0da8aa59"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-zwffm-qbxjl",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-zwffm-qbxjl"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://55ad424054d15d30d5febd4663eb524bf13814af9f52bae90ccaea45e377328c"
+          },
+          {
+            "containerID": "containerd://b337e954ce653cbcd91b72e4b683bdfdcfda8d3db16b3b0db859c4d1710c5704"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "github-actions",
+        "name": "ci-squad-zwffm-xszjs",
+        "ownerReferences": [
+          {
+            "kind": "Runner",
+            "name": "ci-squad-zwffm-xszjs"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "runner",
+            "resources": {}
+          },
+          {
+            "name": "docker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://4df475ecac7b59c6b12dc683ff1be01004f4a8d8e4e304adfb2ea739e345017b"
+          },
+          {
+            "containerID": "containerd://96caa98d55a2e6f2ef251c89eec186966b8701bbb38685a7f30de6787b343754"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-demo",
+        "name": "hyku-demo-fits-647b8f7fc4-p7mr5",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-demo-fits-647b8f7fc4"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://9587f48377101c42dff4677915130d2d77387294f3a4cf65a9968f07bea47930"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-demo",
+        "name": "hyku-demo-hyrax-76798d7c6c-jcr6q",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-demo-hyrax-76798d7c6c"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d26e4e7056cd4da224db615e6641081ee7a7adf5bcad5d9d1d802a21cd631326"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-demo",
+        "name": "hyku-demo-hyrax-76798d7c6c-n2hqn",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-demo-hyrax-76798d7c6c"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://f2959e9cf6b55686930f4292ef64e7b85d62805a676a005e8445aee11c73f95c"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-demo",
+        "name": "hyku-demo-hyrax-worker-64b578df7f-dghnr",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-demo-hyrax-worker-64b578df7f"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://649a978524624915b7ac94d9de82d98c7d01890ff340260022fb911cd57c6ec6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-demo",
+        "name": "hyku-demo-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "hyku-demo-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://79ae7d04c5375feed35fce35dc6a5d2b688614a88aea142e1969d6c41bf5ab21"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-fits-5b767f4b7f-ccx4r",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-iiif-fits-5b767f4b7f"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://89b164f9a8775bd9cbd40ab48156b0cef286334c46bf032cb33a9ab6a9cf4024"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-hyrax-8bbf9cf74-6bbb2",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-iiif-hyrax-8bbf9cf74"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://4a724aae1d011a2ff1a3ccfd5c92989fe217533e839b697d4513a5c4a068bb35"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-hyrax-8bbf9cf74-hvpxb",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-iiif-hyrax-8bbf9cf74"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://3d6bd5c9d9685ad2e82563e15bf671589824228a74b214102c5c30905fb960ad"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-hyrax-worker-84bc484657-skcnk",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-iiif-hyrax-worker-84bc484657"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b13eac05507d3560fa2792fcfe9cd7fb764ad26bb841f070065656e954f72711"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-nginx-55f6d9b4c5-qhzlv",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-iiif-nginx-55f6d9b4c5"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0ae3a6d2d04ffe598d0c15745906322308a612713ea4e98472aa285d1d5651ac"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-iiif",
+        "name": "hyku-iiif-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "hyku-iiif-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://018d9cba7969d096f2267736214746297bc60375ab95b7c6f4d628bed686b782"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-fits-77f9465bc5-b42j2",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-staging-fits-77f9465bc5"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0b1fcab0072185fa63a80d0f621e06b6790abadded0a398f20b7b8f8e68be8aa"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-hyrax-8977c8cb6-ccxcd",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-staging-hyrax-8977c8cb6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://eae22c6b6c85667b2d2603edcdbc8aac58545d7dc38e58bc087753a80328daad"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-hyrax-8977c8cb6-mtmlv",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-staging-hyrax-8977c8cb6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://cc9f6e36d6e8441056c3a0af692e33e2f8460bffd47f25d394a5409e3b5e2819"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-hyrax-worker-9647778d6-9rjzw",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-staging-hyrax-worker-9647778d6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a415908758264108eef203e376ac714ea2b722b1b60d7e5990888d785ec3e674"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-nginx-dccb47b68-p8trt",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hyku-staging-nginx-dccb47b68"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "64Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://166657f20d506dac50173d222d92829eb216aaf3d3bc86e7e3ab95d5e3df484d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hyku-staging",
+        "name": "hyku-staging-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "hyku-staging-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c0302b48396ce7c11e194661e3dafa8cb031b4274a4363058483305ac6d0beb7"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-friends",
+        "name": "hykuup-knapsack-friends-fits-b7b46986b-jngmc",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-friends-fits-b7b46986b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2372e680b5f60d066d1420cefa80c3781e1ade2c67b6f35e4a9c6a1a6e8b178a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-friends",
+        "name": "hykuup-knapsack-friends-hyrax-5499865f59-dvpm9",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-friends-hyrax-5499865f59"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c407ff2fd0dad8bc6d0452ac5547ba1a59cfbc1803c8cc9c16de70a2834c4714"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-friends",
+        "name": "hykuup-knapsack-friends-hyrax-5499865f59-lgbdp",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-friends-hyrax-5499865f59"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d1aa20959f35124a632af0fc4e527f4f7e9f47d3af11b7e767c5183bd3412561"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-friends",
+        "name": "hykuup-knapsack-friends-hyrax-worker-7d8bdb9b7b-pq7cv",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-friends-hyrax-worker-7d8bdb9b7b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://da22055cab28eec1bd664d4b044e5e5c506bee11924d4e076ba31662e0b498ae"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-friends",
+        "name": "hykuup-knapsack-friends-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "hykuup-knapsack-friends-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://e0981a98f4e356216d8335a10969469942118bcacde998e79dab4f5e785b638e"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-staging",
+        "name": "hykuup-knapsack-staging-fits-654865685d-xgm9s",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-staging-fits-654865685d"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://3efee5e96aa57e1a07a58f66f7664e541bf79e82154d077e48ce43b90859e26b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-staging",
+        "name": "hykuup-knapsack-staging-hyrax-66d9d5c57b-m7hj8",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-staging-hyrax-66d9d5c57b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://68a4fadf508d95bc64c868cfbfd2218a4436dc56dfdbeef19f638b7cb421d4fd"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-staging",
+        "name": "hykuup-knapsack-staging-hyrax-66d9d5c57b-wmvfw",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-staging-hyrax-66d9d5c57b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0b8e8c275b8eda25fad69fa424cdfc6377f74d2e30d1487673aeb383694d882d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-staging",
+        "name": "hykuup-knapsack-staging-hyrax-worker-668bb8666b-m9wgj",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "hykuup-knapsack-staging-hyrax-worker-668bb8666b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2f478e0a26da62843142e40720540a432cb5cfe90e1344c65ab731a41a568023"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "hykuup-knapsack-staging",
+        "name": "hykuup-knapsack-staging-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "hykuup-knapsack-staging-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://32893d0d165845325bf8158d5fda2229e9869e833284f976dfedd90ebd13652a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "ingress-nginx",
+        "name": "ingress-nginx-controller-865db46cc9-5xqvh",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "ingress-nginx-controller-865db46cc9"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "controller",
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "90Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://59ef19f16a439200fd88785a5d246db01a6d86133797311e74398adec63fc4c1"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "ingress-nginx",
+        "name": "ingress-nginx-controller-865db46cc9-bcs5t",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "ingress-nginx-controller-865db46cc9"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "controller",
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "90Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://080667b78d9577bef15a7e6f149a4c2e7b6ec791591187b26dd26ecdf1ba46ab"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-load-balancer-controller-56f87b9cbb-5btcg",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "aws-load-balancer-controller-56f87b9cbb"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-load-balancer-controller",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://23266bb4e583c219b031db043b732b92addffa5952d6234ec68161a46e093183"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-load-balancer-controller-56f87b9cbb-mwdq7",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "aws-load-balancer-controller-56f87b9cbb"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-load-balancer-controller",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://238797a59884311b111508d5cfdb7d6421f81a6c8f6f64d972e4047643432778"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-6vfnm",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://141524eaabbd3d45f37646e934acafcb6eda347208732109e111e142ecde9b1e"
+          },
+          {
+            "containerID": "containerd://2568c148e8c262debb756410958f872a6d35fb1688160c6d2aa4dda2d34d5788"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-8v9m6",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://f0e10d492e009dc51b2fb3e7ae833f9716f1badeea7c31a462a2f6d3dce91bfb"
+          },
+          {
+            "containerID": "containerd://2ad7524a1ae4f46cb368c1d8d813510d98c5712de96ba2a195b266e13cce5635"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-9b9gd",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2846ca15c006e0c21060b683d41353afc058ae35184d45658a1bfa1a26c9e53c"
+          },
+          {
+            "containerID": "containerd://bc35475f901a2fff4d71e283b4c9cda8856e4d2c9a5c468f11063cb49863b553"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-n4kvx",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2340537a120762efda4b61f093bd8d30951edd869a102c93cdec056b644bf2ef"
+          },
+          {
+            "containerID": "containerd://db10c98d960b742ad255c294972ccd7dee48e66b4beb624897ad10710a9d8ad4"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-n6bkv",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://9c866edf6727adb610a96aa4b1cdb8a03e56457a582bbc12257a37f7720b295f"
+          },
+          {
+            "containerID": "containerd://f0fb0f5606b3258a3a549e07118a4883cd82327a37727a0f790f3e19ba29482a"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-nknm9",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://97df1b3b19e8ea17c089f4baee059120855b797e78d4f7d1b85b694460dd7874"
+          },
+          {
+            "containerID": "containerd://f0e994bf71ec41c8dfd310ed9821c2ebaaff0ca28032f5742e593dc235833490"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "aws-node-z4hp6",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "aws-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "aws-node",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          },
+          {
+            "name": "aws-eks-nodeagent",
+            "resources": {
+              "requests": {
+                "cpu": "25m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://603f81c769542438ff25691e8cb4b8493b5e71b2f0290cfb2f8922a821406b2c"
+          },
+          {
+            "containerID": "containerd://54deca270d20b3aa1cd9f2d763f84596406af24d9776768640ebcaf1da3082f4"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "coredns-84c5765f7-j5bzp",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "coredns-84c5765f7"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "coredns",
+            "resources": {
+              "limits": {
+                "memory": "170Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "70Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d888f5500b2483c4ff3332b2b671f6abbb1d01c557f83b61f349e1559d7c4633"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "coredns-84c5765f7-jcfjq",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "coredns-84c5765f7"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "coredns",
+            "resources": {
+              "limits": {
+                "memory": "170Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "70Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8f8b8f4593b4d38d61ca9f46615eb0ccc1bb217951413fa8100907a323031dda"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-controller-6d94bfb7cf-mc78v",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "ebs-csi-controller-6d94bfb7cf"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-provisioner",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-attacher",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-snapshotter",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-resizer",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6470e22ae0bd9a14ddbaf84c336c93cf80244943f180c41d8eb345d8ba2a1867"
+          },
+          {
+            "containerID": "containerd://cd6f4561ebeda76965358882d56e9325c7f0ffcadd3f40ec001d6ccf67c4d5d0"
+          },
+          {
+            "containerID": "containerd://a4aee7308f96ecbdd0493977eafd790a16e714fed290fcb990d4da5b8b2cd2cd"
+          },
+          {
+            "containerID": "containerd://ebef8595a37bc83775586cc2e8f5e067ea5773f2db63961056581c59e9c74ae6"
+          },
+          {
+            "containerID": "containerd://9e526c3554b2221bb2e8452cca7ffc64b20036713d2f5bf65e373dc760fe3bd8"
+          },
+          {
+            "containerID": "containerd://1b870fbc9626a3f73c19afa115d460c05039d3cef387f1a26c8655e54352d4a6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-controller-6d94bfb7cf-txghb",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "ebs-csi-controller-6d94bfb7cf"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-provisioner",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-attacher",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-snapshotter",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-resizer",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://dc01c3cf0e5611d62b33df1c43625fe5b4c867824962504931e4c5887a0e3c6d"
+          },
+          {
+            "containerID": "containerd://0298874bea979cf5a5422abc5fdf77507780cae8be27246b2a94fc4e14b17b01"
+          },
+          {
+            "containerID": "containerd://f44e3e9ea3fb90bb3b9d0696d614b40e7a4228a5bed628aee65df131f34757ae"
+          },
+          {
+            "containerID": "containerd://2d1d5adb6bcda5c5dd18847b8840d9aaa6ef7add4795d8e51ec212c08c7c8e9a"
+          },
+          {
+            "containerID": "containerd://693a004cdd91f96ba67914e274c031f97cc08b67653b41baca5e61e9c20c9729"
+          },
+          {
+            "containerID": "containerd://15f7d04c2292e85b6c4d4153cdbc0e8420aebaf8114afe56256c3c289c2202c5"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-4r626",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://187d485828cd0abae56063464ded8a1ef27783d1136bb6257151d0bd1819060c"
+          },
+          {
+            "containerID": "containerd://7bd65e9d4ad98e2d406f7f24cc103f487fefee41b4422fa71a2a6bd0cd0ddc1f"
+          },
+          {
+            "containerID": "containerd://d8805461e078de4d8891c13d9a9753a03621353c63275996587bf9e9014c0689"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-cch5k",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://36df1fcde7749356c1cd91fb2195a52732eb122fd9c559c5086a85ccd1a197c6"
+          },
+          {
+            "containerID": "containerd://c9e6cb6a1e488965e8d9ebec915233e0f8aabf0f1e4a3233708374b51a1a2767"
+          },
+          {
+            "containerID": "containerd://41526a363f241d827ec179a62a3fcddc0912743f35fd5cd558c3a73a9467f532"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-d7scs",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://974a8118a909c9fc09b6de1b4e3421ab3406684e005ead9805bb83e438ad7980"
+          },
+          {
+            "containerID": "containerd://7c8fcf81d7f520891881247a0abe167f8651e6d4e6bb8c33c3ac099db2a5340d"
+          },
+          {
+            "containerID": "containerd://774b6a1f7de8522671867b6d56557d6417bb78a5c86db7fba1bd77cc7025b4fb"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-q2bnq",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://48c3f86a784136ab0b5e49a6307556b5c1c9a768c7764332792b3fb7dba25381"
+          },
+          {
+            "containerID": "containerd://c309c5e537617accb84798bc42b92d487e5ebafd138ffe259ea23712b770c589"
+          },
+          {
+            "containerID": "containerd://6b231c71e3ea768b34f032a0775f3d1759807932eddb979707432f3875534f27"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-rm2hz",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a18590ac75297b7ad33469826004274a0961cd80fe34a27f4f0ff88c73a1da6d"
+          },
+          {
+            "containerID": "containerd://b3a306f5ad0b52d51faaf3e78142a14efd98c7bff747fddd75f8b6e3efe97313"
+          },
+          {
+            "containerID": "containerd://f8c0c3b87f4e4fb770fddb9cc07d6c9eb42d6869f9bea7be7cd945e3d78e50b7"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-t6s9v",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://14b078732e492abb38f8982b26df86752b2b9f5fafc7466236ddcbff1eced693"
+          },
+          {
+            "containerID": "containerd://63affab1e6d78e235a2c4884bea719f9959876f164efe02199e50aad1627cc8e"
+          },
+          {
+            "containerID": "containerd://acba2fed5f0ee9187b2727ef18bc463306de38eaecea48b8d1a4e8ce3d82218b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "ebs-csi-node-z78md",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "ebs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ebs-plugin",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "node-driver-registrar",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "10m",
+                "memory": "40Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0e8acb77642a2126c7ae880cd1ce0ff603805c39b53aad802c7c8bb686c6770c"
+          },
+          {
+            "containerID": "containerd://159b9a45bb39c3274835e1f0f255c1bec65600fb5a25aae79a19389049c4160f"
+          },
+          {
+            "containerID": "containerd://b89dbee611b0a692c11134eac51da30676464061ad1c7edd77d0bd9713d93314"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-controller-6dfd79bb4d-m75kd",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "efs-csi-controller-6dfd79bb4d"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-provisioner",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://02e13e4cc6b9d5d1d6c26e09056fb28e2e2163754f5506a04ef5fffb58b2d61b"
+          },
+          {
+            "containerID": "containerd://a7ec61023575be2b34399a675ba246933aaafba15375126a3286b9396e98f7c4"
+          },
+          {
+            "containerID": "containerd://68299b0b631afca4fd8cd2f3ecf70e66d2de3609e5ebb5841cecc4af1cbb88d8"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-controller-6dfd79bb4d-q9xln",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "efs-csi-controller-6dfd79bb4d"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          },
+          {
+            "name": "csi-provisioner",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://ebae0e340ea0f7d2a1015257457b8e98997660d4570be0b0265e7e22e7bf655d"
+          },
+          {
+            "containerID": "containerd://f0cefffcaa20e100d276e9299828feb2a5bdd71665781fc42585abbd4d0b4391"
+          },
+          {
+            "containerID": "containerd://07dad8f46fbfba6ef06e00f9bb1ac84cb00605e9e648bb1b73dc73dd8e686e69"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-48vbx",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://eb4d96c5c3f25dacdc2d79a2374411079d0a1279a6d938af544f96c6f18a2539"
+          },
+          {
+            "containerID": "containerd://e0ccff6ee734342af0d7de0c24b0c65bb896f9b3e669928a9e73b259bf649db6"
+          },
+          {
+            "containerID": "containerd://7f29d1b3c51c49c0272ea10bf705897baa612a415f1fb42d4a55eb3d9628f8f7"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-5ggv7",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://6804dfb74e3a14e7128c7d7c65180e647bb15fe7f7f6718e45e4517591d5edb8"
+          },
+          {
+            "containerID": "containerd://eefd458d5cc7af28bd6738a278c375e4559fd4ef61702feb999c0ae8b4f5e164"
+          },
+          {
+            "containerID": "containerd://d660026024b46d84ed8d72f80c3dd82ed7356bf67937c17a3223872f00adb356"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-dgz86",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://742f6b6f26702743cc0d5fafcd7ec28fb4a565cd59f5669e236d0378e34264e9"
+          },
+          {
+            "containerID": "containerd://39eb56821b0b4dda6fd077ba4f718b58e78d753173f351b0a4ce4c62a033b339"
+          },
+          {
+            "containerID": "containerd://bc0c1f4075bec1c6529271dd6727c559f2fd01729b8f0c08abb76a9e45e5fee3"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-j4sd6",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://f6d4272ddb1de018f560a9fbced19c80384e7759d86b8afd5ac7f5b02ca15ae9"
+          },
+          {
+            "containerID": "containerd://a2d02660adba1aaf841b8664d108faaa8d82f99052600c2b266f4c6f66f816a0"
+          },
+          {
+            "containerID": "containerd://566a00557318a2a2020c5a440148f835c075af36ce0b59c94d9c14ca893c1a89"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-p574d",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c50ec7e7dcb6620a7f6226c5994967a386035c6da7e418951fc3e52b1c65a29c"
+          },
+          {
+            "containerID": "containerd://82f48c76ba8affbe279e92dfff64b9c8752a1d265581ed709fcd1d6035fb543e"
+          },
+          {
+            "containerID": "containerd://e8c029428b66dfdeba92fc6e6c7cdc8606621dd75f059e8bffc46c620dc7404d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-s56rm",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://53c9b430a91995acfcae2f2bf7db3bf69946cb8545ca18c2481a1d764fc74fab"
+          },
+          {
+            "containerID": "containerd://44bbbf48b4e4d2ce52281ca9f79549749e8755b74ea2f54f7a9e91e444c1826f"
+          },
+          {
+            "containerID": "containerd://9a740a426575ce05dd787abd3f4ae63e46c39c183d3e4e1ac5265a4d8f9e7034"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "efs-csi-node-tvd4x",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "efs-csi-node"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "efs-plugin",
+            "resources": {}
+          },
+          {
+            "name": "csi-driver-registrar",
+            "resources": {}
+          },
+          {
+            "name": "liveness-probe",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://19c8cb9cd510eca31c455a34d482fb4875dd91ee9f154ff1378fa3858e86ece0"
+          },
+          {
+            "containerID": "containerd://a8b2008b54bdafd0ce7c917f90bb56026ea201b020f27ee118eaa196d18f488f"
+          },
+          {
+            "containerID": "containerd://1b32050a3afbfd52a338ae9b73b17118624cf0c49057389ec88406e0c4333e46"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-2hjxc",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b2475968b8012825b9728525dc4147355fe4c1e9b1a1b2e21684b9217aef9ae9"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-8nnrg",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://f98da280da71c14b44a530c30d74c9dd49209c58bd6ba54b2fa27afc06d4d5bf"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-ddk82",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://e0335f7fe0f6ad6e104f9db803f93189b4dc76475dabb08a3a8173293a41641d"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-lk9nl",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b0eb2061834bc6117dfe4f32241a48ae47dc2dead3b8cfec2c7cb7f0c75236e5"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-pclcg",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://84b309bdfdcc9f3b2f8383783dac256bc793e3bbb6a3f247be6402522b89b595"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-wx67g",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d6dc3805698f2fad89bef98ead5312a2cbc0abd88488c1f9841527a1e91a9ab1"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "kube-system",
+        "name": "kube-proxy-x5btm",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "kube-proxy"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "kube-proxy",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://793187e8112f1b4c9ae1382a5ccf4cf8bb6921dc4be1b70252968d4ae2837046"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "maildev",
+        "name": "maildev-69d875586d-k7qzm",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "maildev-69d875586d"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "maildev",
+            "resources": {}
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://53fd54fc98b6e31ff280f5ca3f164ce83216bd63acba01a4a754c2f390ea5075"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "marketing-wp-friends",
+        "name": "marketing-wp-friends-95f9495c8-652sq",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "marketing-wp-friends-95f9495c8"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "wordpress",
+            "resources": {
+              "requests": {
+                "cpu": "300m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://7c2826917563c733d956559d005370d861a24e430245be42cc5d02726bf76728"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "marketing-wp-friends",
+        "name": "marketing-wp-friends-mariadb-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "marketing-wp-friends-mariadb"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "mariadb",
+            "resources": {
+              "limits": {
+                "cpu": "375m",
+                "ephemeral-storage": "2Gi",
+                "memory": "384Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "ephemeral-storage": "50Mi",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://720bfe2acaf6d34e585842927177952373576c01ad7a1a8f8df4ed7d878a26a5"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-fcrepo-7d89c7df88-dp24s",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-fcrepo-7d89c7df88"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fcrepo",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "3Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://298792dbdff0b5105bdfb66aae7edee1f21b24c1e2c79aec3b9595ffa2c3531e"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-fits-77d56d694f-85jdq",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-fits-77d56d694f"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://84fe2cc272da47ce79a299c4ad321343ebbaa40962c90fbdce8d08761d73b5c5"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-hyrax-764d49f87b-8kzbx",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-hyrax-764d49f87b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://fef0b0bf5482ce650acae84a720b903b6e6ec1ae75193caeaa1cf1822bae7b13"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-hyrax-764d49f87b-kcgl8",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-hyrax-764d49f87b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "200m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://d70b752b2168ae99da2af52f549fb439c50337f20313195f7c3bbb8c5cc686a4"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-hyrax-auxiliary-worker-7fc9bckxjgl",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-hyrax-auxiliary-worker-7fc9bc9796"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://aa778cc0d3882a3a675c7142b193aad592f3e7793d9d4aeb67fde24bfd09ecca"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-hyrax-worker-79cc7d6d85-6xkbr",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "crash-world-cake-friends-hyrax-worker-79cc7d6d85"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://362ceb96e7974476a747003788070192bb53a8c32422dc098780e76404f5ecc9"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-postgresql-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "crash-world-cake-friends-postgresql"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "postgresql",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "50m",
+                "memory": "384Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://dfadece5b72cf18bb39e6ce30e58ec1395bc1679282901dc8886e7cda5f1b81f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "crash-world-cake-friends",
+        "name": "crash-world-cake-friends-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "crash-world-cake-friends-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://dbe4d9094ad2bd9c735f92c02c44a6978f092601953fb2de8dfff1d9c8c623a6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "postgres",
+        "name": "postgres-postgresql-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "postgres-postgresql"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "postgresql",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://17750c0276f225b9b5f59a44532fcf1a64855bf582969eb21ec6ec60f68fd14f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-api-cable-6fcfb65cc6-fggqb",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-api-cable-6fcfb65cc6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "cable",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8c00dc47b8724ebee0fd271cf9021f8f6e25f6c354084bd6ec770114f989acf0"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-api-clockwork-97468dc9c-4rjp8",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-api-clockwork-97468dc9c"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "clockwork",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "300m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://f3915beff5833b2e087839be0e6efd44e20f0510b5ea55e12541ba30417d295b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-api-rails-7f5556457b-qtrrt",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-api-rails-7f5556457b"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "rails",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b4f7507cd061dc294b91162effe8bf64cd96675f8cb8e59bea0fcd2eb067bab6"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-api-sidekiq-6bcccc8f85-c85rk",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-api-sidekiq-6bcccc8f85"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "sidekiq",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "6Gi"
+              },
+              "requests": {
+                "cpu": "400m",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1bd957752b327cd3e4bde4ddf19f1a60a666dc706f7414397bb43bab20749dfb"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-client-bdd844685-qfbtd",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-client-bdd844685"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "client",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://17c3ce62a63a43a1e1d3a27af988b1d77ebcd7248370e774a9b8528989d0f56f"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-es-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "royalty-fireplace-friends-es-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "elasticsearch",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "640Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1693a13c2eca1a7d34b3785d5b9d88a72073d519a648331a81ae11535a60f341"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-nginx-67b8cc4cc7-nc86n",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "royalty-fireplace-friends-nginx-67b8cc4cc7"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "64Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://c904c216f3148c5865b9ec2be9c2e9cefc518834543a49de52f94e55cdd329a3"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-postgresql-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "royalty-fireplace-friends-postgresql"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "postgresql",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "50m",
+                "memory": "384Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://b487ddda0eaa2e0ad7380cc10f245979643e4ee838dac3ca16b86ccf1226d827"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "royalty-fireplace-friends",
+        "name": "royalty-fireplace-friends-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "royalty-fireplace-friends-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://ec41615e9f44fa0139607adc0299ec83dcb40c11e67a10daac9269e358c3f15b"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "solr",
+        "name": "solr-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "solr"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "solr",
+            "resources": {
+              "limits": {
+                "memory": "8Gi"
+              },
+              "requests": {
+                "memory": "4Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://cd907a865fe9235b209f88d237dc1f0eff1ad6003bdd84af1e09bd42dd176882"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "solr",
+        "name": "solr-1",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "solr"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "solr",
+            "resources": {
+              "limits": {
+                "memory": "8Gi"
+              },
+              "requests": {
+                "memory": "4Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://bda27753d44947353489a502835c16a81c413b758ef4b8bbf5460219092c15b0"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "solr",
+        "name": "solr-zookeeper-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "solr-zookeeper"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "zookeeper",
+            "resources": {
+              "limits": {
+                "memory": "1Gi"
+              },
+              "requests": {
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://88c1e7cc88a1ccc33f1474d7198029c89f92bd7b526a8417847313e0af3f4257"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "solr",
+        "name": "solr-zookeeper-1",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "solr-zookeeper"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "zookeeper",
+            "resources": {
+              "limits": {
+                "memory": "1Gi"
+              },
+              "requests": {
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://83ac25182b54024c8f153eb2c21b038180a84ed08b5a9a174006b73fc60f23e1"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "solr",
+        "name": "solr-zookeeper-2",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "solr-zookeeper"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "zookeeper",
+            "resources": {
+              "limits": {
+                "memory": "1Gi"
+              },
+              "requests": {
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://0f93a891c18be873577684e56c6e6fbaa6f5c705beb1af95f8c43d12df0d2b86"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "speaker-reach-friends",
+        "name": "speaker-reach-friends-hyrax-5fd7fc6bc6-n7hft",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "speaker-reach-friends-hyrax-5fd7fc6bc6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1536Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://93051a3982ba734aabc6770711fdd3ebcc2f5ba7d1380b5686e0d5e143626ba7"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "speaker-reach-friends",
+        "name": "speaker-reach-friends-hyrax-5fd7fc6bc6-rvr6k",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "speaker-reach-friends-hyrax-5fd7fc6bc6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1536Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2dace012f6d3ea671a7e8421bd415ef10ac8c2330ba444f565cf684e65135d0c"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "speaker-reach-friends",
+        "name": "speaker-reach-friends-hyrax-worker-6ff6c686d6-hcfwv",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "speaker-reach-friends-hyrax-worker-6ff6c686d6"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://7a81e53299eaa9555e6daebb0c95b13c0768f89157a3242047fe2256a3f4a392"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "speaker-reach-friends",
+        "name": "speaker-reach-friends-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "speaker-reach-friends-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://31d9f402c8e115ced8049a4c1fbed2744d2a199251e53372b7135b37d8874f99"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-4rrkt",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1287727823775cf735d02bed3fc9911cc6aea457df5e6438dda225b0e5232135"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-6lqsm",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://a1f0fb641d43a3d7ab3e503aec0834878d54456a2d3d0f1a901e5f00c261dc24"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-ds2vc",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://146deec1eb972ddd8ba77e8c9e6bde91bb3cb922793a4031bb2aa1eaae9db791"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-glh9z",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8e263cd1c64e6e81d39ee6f31440300290f015b816c38433a58aaa25ff4b6504"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-hnvt9",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://5353ec54bba323a5c24d30a28035cee88d7fc6330f9a96e3f851c9c08467a305"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-tstbb",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2b4ad8fe991700996f1ef2c2f05621ef9fd492830a8a880473c95aea18e68953"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "node-agent-tz9px",
+        "ownerReferences": [
+          {
+            "kind": "DaemonSet",
+            "name": "node-agent"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "node-agent",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1Gi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://1ffd307a8daca5f68e3bc705cf61ee155209e1758d3add6a1ce9a36fba5b7696"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "velero",
+        "name": "velero-1717712347-6dc998d979-kggsj",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "velero-1717712347-6dc998d979"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "velero",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "512Mi"
+              },
+              "requests": {
+                "cpu": "500m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://593b38c567ea1677ab0faf2f89c7959896421b9af0e2e4954c6ce4676cd611ba"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "compact-petty-friends",
+        "name": "compact-petty-friends-setup-dm2cq",
+        "ownerReferences": [
+          {
+            "kind": "Job",
+            "name": "compact-petty-friends-setup"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "setup",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://72cbaad90a1f1f2b0696a26dbbc5b895b74a97eb995039bb2db7063a009ee246"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "compact-petty-friends",
+        "name": "compact-petty-friends-web-66ff74c457-8rnh8",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "compact-petty-friends-web-66ff74c457"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "web",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://9e38c157c0e0efc67256b1586bfba1fc6725b929da65452f1f13b68d681f32a8"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "examination-up-friends",
+        "name": "examination-up-friends-fits-7c89b99647-9d7kz",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "examination-up-friends-fits-7c89b99647"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "fits",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "1536Mi"
+              },
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://8927d303a5b88efb173a13fecd5b3a9da0cb0640f054601d2fab7e2882588b84"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "examination-up-friends",
+        "name": "examination-up-friends-hyrax-856c5c8c76-428qm",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "examination-up-friends-hyrax-856c5c8c76"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2fa08f839d979eeecc3a5f80ca106706431d028438b8658d4b3344fabe12fd3e"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "examination-up-friends",
+        "name": "examination-up-friends-hyrax-856c5c8c76-v5jch",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "examination-up-friends-hyrax-856c5c8c76"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://84ed3c8b66910188ae908feab233a7f333337c26fdf81e1912f4192b44a20549"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "examination-up-friends",
+        "name": "examination-up-friends-hyrax-worker-9f7576b5-lvtnf",
+        "ownerReferences": [
+          {
+            "kind": "ReplicaSet",
+            "name": "examination-up-friends-hyrax-worker-9f7576b5"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "hyrax-worker",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "2Gi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://2383aaae07ef617afce569081ba85a47db7bc55c9dccd2e794159c4fd3198777"
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "namespace": "examination-up-friends",
+        "name": "examination-up-friends-redis-master-0",
+        "ownerReferences": [
+          {
+            "kind": "StatefulSet",
+            "name": "examination-up-friends-redis-master"
+          }
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "20m",
+                "memory": "128Mi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "containerStatuses": [
+          {
+            "containerID": "containerd://88de1cf039c38677875dbfe9719963925223a8b9b67d03b66166f3b1b81380a6"
+          }
+        ]
+      }
+    }
+  ]
+}
