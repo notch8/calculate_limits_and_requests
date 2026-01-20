@@ -49,7 +49,7 @@ class Memory
     end
   end
 
-  class Request
+  class MemoryComputeResource
     attr_reader :current, :minimum, :quantile
 
     def initialize(current:, minimum:, quantile:)
@@ -58,7 +58,7 @@ class Memory
       @quantile = quantile
     end
 
-    def current_mebibytes
+    def current_normalized
       Memory.string_to_mebibytes(string: current)
     end
 
@@ -69,7 +69,9 @@ class Memory
     def recommended
       Memory.round(mebibytes: recommendation_in_mebibytes_raw)
     end
+  end
 
+  class Request < MemoryComputeResource
     private
 
     def recommendation_in_mebibytes_raw
@@ -80,27 +82,7 @@ class Memory
     end
   end
 
-  class Limit
-    attr_reader :current, :minimum, :quantile
-
-    def initialize(current:, minimum:, quantile:)
-      @current = current
-      @minimum = minimum
-      @quantile = quantile
-    end
-
-    def current_mebibytes
-      Memory.string_to_mebibytes(string: current)
-    end
-
-    def display
-      Memory.mebibytes_to_string(mebibytes: recommended)
-    end
-
-    def recommended
-      Memory.round(mebibytes: recommendation_in_mebibytes_raw)
-    end
-
+  class Limit < MemoryComputeResource
     private
 
     def recommendation_in_mebibytes_raw

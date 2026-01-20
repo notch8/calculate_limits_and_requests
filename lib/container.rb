@@ -62,8 +62,8 @@ class Container
   end
 
   def current_display
-    [cpu.request.current_millicores, cpu.limit.current_millicores, memory.request.current_mebibytes,
-     memory.limit.current_mebibytes]
+    [cpu.request.current_millicores, cpu.limit.current_millicores, memory.request.current_normalized,
+     memory.limit.current_normalized]
   end
 
   def quantile_display
