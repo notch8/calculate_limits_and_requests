@@ -3,27 +3,23 @@
 ##
 # Represents the container on a kubernetes pod. Used to calculate appropriate requests and limits for that container
 class Container
-  attr_reader :container_json, :identifier, :pod_name, :owner_name, :cpu, :memory
+  attr_reader :container_json, :identifier, :cpu, :memory
 
   def initialize(container_json, identifier, pod_name, owner_name)
     @container_json = container_json
     @identifier = identifier
-    @pod_name = pod_name
-    @owner_name = owner_name
-    @cpu = Cpu.new(identifier:, current_resources: container_json[:resources], type: type)
-    @memory = Memory.new(identifier:, current_resources: container_json[:resources], type: type)
+    @combined = "#{pod_name} #{name} #{owner_name}".downcase
+    resources = container_json[:resources]
+    @cpu = Cpu.new(identifier:, current_resources: resources, type: type)
+    @memory = Memory.new(identifier:, current_resources: resources, type: type)
   end
 
   def name
     container_json[:name]
   end
 
-  def combined
-    "#{pod_name} #{name} #{owner_name}".downcase
-  end
-
   def type
-    case combined
+    case @combined
     when /redis|memcached/
       :cache
     when /postgres|postgresql|mysql|mariadb/
@@ -67,8 +63,10 @@ class Container
   end
 
   def quantile_display
-    [cpu.quantile.ninety_five_in_millicores, cpu.quantile.ninety_nine_in_millicores,
-     memory.quantile.ninety_five_in_mi, memory.quantile.ninety_nine_in_mi]
+    cpu_quantile = cpu.quantile
+    memory_quantile = memory.quantile
+    [cpu_quantile.ninety_five_in_millicores, cpu_quantile.ninety_nine_in_millicores,
+     memory_quantile.ninety_five_in_mi, memory_quantile.ninety_nine_in_mi]
   end
 
   def recommended_raw

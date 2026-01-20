@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+##
+# For memory resources and requests for containers
 class Memory
   attr_reader :request, :limit, :quantile, :type, :max
 
@@ -49,6 +53,8 @@ class Memory
     end
   end
 
+  ##
+  # Memory compute resources shared with limits and requests
   class MemoryComputeResource
     attr_reader :current, :minimum, :quantile
 
@@ -71,6 +77,8 @@ class Memory
     end
   end
 
+  ##
+  # Memory requests
   class Request < MemoryComputeResource
     private
 
@@ -82,6 +90,8 @@ class Memory
     end
   end
 
+  ##
+  # Memory limits
   class Limit < MemoryComputeResource
     private
 
@@ -93,6 +103,8 @@ class Memory
     end
   end
 
+  ##
+  # Used for calculating recommended limits and requests
   class Quantile
     attr_reader :identifier
 
@@ -121,6 +133,8 @@ class Memory
     end
   end
 
+  ##
+  # Used for displaying maximum memory used by container to ensure we are recommending reasonable limits
   class Max
     attr_reader :identifier
 
