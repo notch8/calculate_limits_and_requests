@@ -16,8 +16,8 @@ RSpec.describe CalculateResources do
   describe 'combining pod items with quantiles' do
     it 'can assign values to Item' do
       item = calculator.pod_items.first
-      item.containers.first.cpu_99_quantile_c
-      quantile = item.containers.first.cpu_95_quantile_c
+      item.containers.first.cpu.quantile.ninety_nine_in_cores
+      quantile = item.containers.first.cpu.quantile.ninety_five_in_cores
       expect(quantile).to eq(0.0011895495658745458)
       expect(item.containers.first.identifier)
         .to eq('7a92c63742675dc745a4eb1533e4d9c5b848661c70713dc76a321bd06ad8fb90')

@@ -3,13 +3,14 @@
 ##
 # Represents the container on a kubernetes pod. Used to calculate appropriate requests and limits for that container
 class Container
-  attr_reader :container_json, :identifier, :pod_name, :owner_name
+  attr_reader :container_json, :identifier, :pod_name, :owner_name, :cpu
 
   def initialize(container_json, identifier, pod_name, owner_name)
     @container_json = container_json
     @identifier = identifier
     @pod_name = pod_name
     @owner_name = owner_name
+    @cpu = Cpu.new(identifier:, current_resources: container_json[:resources], type: type)
   end
 
   def name
@@ -55,10 +56,22 @@ class Container
   def row
     [
       name, type,
-      cpu_request_current, cpu_limit_current, memory_request_current, memory_limit_current,
-      cpu_95_quantile_m, cpu_99_quantile_m, memory_95_quantile_mi, memory_99_quantile_mi, memory_max_mi,
-      cpu_request_recommended, cpu_limit_recommended, memory_request_recommended, memory_limit_recommended, stanza
-    ]
+      current_display, quantile_display, memory_max_mi, recommended_display, stanza
+    ].flatten
+  end
+
+  def current_display
+    [cpu.request.current_millicores, cpu.limit.current_millicores, memory_request_current, memory_limit_current]
+  end
+
+  def quantile_display
+    [cpu.quantile.ninety_five_in_millicores, cpu.quantile.ninety_nine_in_millicores,
+     memory_95_quantile_mi, memory_99_quantile_mi]
+  end
+
+  def recommended_display
+    [cpu.request.recommended, cpu.limit.recommended,
+     memory_request_recommended, memory_limit_recommended]
   end
 
   def stanza
@@ -66,54 +79,11 @@ class Container
   resources:
     limits:
       memory: #{memory_limit_display}
-      cpu: #{cpu_limit_display}
+      cpu: #{cpu.limit.display}
     requests:
       memory: #{memory_request_display}
-      cpu: #{cpu_request_display}
+      cpu: #{cpu.request.display}
     YAML
-  end
-
-  def cpu_to_s(millicores); end
-
-  def memory_to_s(mebibytes); end
-
-  def round_cpu(millicores)
-    millicores
-  end
-
-  def round_memory(mebibytes); end
-
-  def cpu_request_recommended
-    minimum = minimums[:cpu_request]
-    return minimum unless cpu_95_quantile_m
-
-    rec = round_cpu(cpu_95_quantile_m * CPU_REQUEST_MULTIPLIER)
-
-    [rec, minimum].max
-  end
-
-  def cpu_request_display
-    if cpu_request_recommended >= 1000
-      cpu_request_recommended / 1000
-    else
-      "#{cpu_request_recommended}m"
-    end
-  end
-
-  def cpu_limit_recommended
-    minimum = minimums[:cpu_limit]
-    return minimum unless cpu_99_quantile_m
-
-    rec = round_cpu(cpu_99_quantile_m * CPU_LIMIT_MULTIPLIER)
-    [rec, minimum].max
-  end
-
-  def cpu_limit_display
-    if cpu_limit_recommended >= 1000
-      cpu_limit_recommended / 1000
-    else
-      "#{cpu_limit_recommended}m"
-    end
   end
 
   def memory_request_recommended
@@ -156,40 +126,12 @@ class Container
     2**Math.log2(memory_limit_recommended).ceil
   end
 
-  def cpu_request_current
-    ConversionService.k8s_cpu_to_millicores(container_json.dig(:resources, :requests, :cpu))
-  end
-
-  def cpu_limit_current
-    ConversionService.k8s_cpu_to_millicores(container_json.dig(:resources, :limits, :cpu))
-  end
-
   def memory_request_current
     ConversionService.k8s_memory_to_mi(container_json.dig(:resources, :requests, :memory))
   end
 
   def memory_limit_current
     ConversionService.k8s_memory_to_mi(container_json.dig(:resources, :limits, :memory))
-  end
-
-  def cpu_95_quantile_c
-    @cpu_95_quantile_c ||= CalculateResources.new.cpu_95_quantiles.select do |quant|
-      quant.name == identifier
-    end.first&.value || nil
-  end
-
-  def cpu_95_quantile_m
-    ConversionService.cores_to_millicores(cpu_95_quantile_c)
-  end
-
-  def cpu_99_quantile_c
-    @cpu_99_quantile_c ||= CalculateResources.new.cpu_99_quantiles.select do |quant|
-      quant.name == identifier
-    end.first&.value || nil
-  end
-
-  def cpu_99_quantile_m
-    ConversionService.cores_to_millicores(cpu_99_quantile_c)
   end
 
   def memory_95_quantile_b

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'prometheus'
 RSpec.describe Item do
+  include_context 'with access to prometheus'
   let(:item_json) do
     {
       spec: {

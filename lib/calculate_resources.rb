@@ -6,6 +6,7 @@ require_relative 'prometheus_client'
 require_relative 'conversion_service'
 require_relative 'item'
 require_relative 'container'
+require_relative 'cpu'
 require_relative 'quantile'
 
 PROMETHEUS_URL = 'http://localhost:9090'

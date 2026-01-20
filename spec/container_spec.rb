@@ -34,22 +34,21 @@ RSpec.describe Container do
   end
 
   it 'has requests and limits' do
-    expect(container.cpu_request_current).to eq(100)
-    expect(container.cpu_limit_current).to eq(1000)
+    expect(container.cpu.request.current_millicores).to eq(100)
+    expect(container.cpu.limit.current_millicores).to eq(1000)
     expect(container.memory_request_current).to eq(1024)
     expect(container.memory_limit_current).to eq(2048)
     expect(container.identifier).to eq(identifier)
   end
 
   it 'can give recommendations for cpu requests' do
-    # container = described_class.new(container_json, identifier)
-    expect(container.cpu_request_recommended).to be_an_instance_of(Integer)
-    expect(container.cpu_request_recommended).to eq(100)
+    expect(container.cpu.request.recommended).to be_an_instance_of(Integer)
+    expect(container.cpu.request.recommended).to eq(100)
   end
 
   it 'can give recommendations for cpu limits' do
-    expect(container.cpu_limit_recommended).to be_an_instance_of(Integer)
-    expect(container.cpu_limit_recommended).to eq(1000)
+    expect(container.cpu.limit.recommended).to be_an_instance_of(Integer)
+    expect(container.cpu.limit.recommended).to eq(1000)
   end
 
   it 'can determine a likely container type' do
