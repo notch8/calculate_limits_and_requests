@@ -36,8 +36,8 @@ RSpec.describe Container do
   it 'has requests and limits' do
     expect(container.cpu.request.current_millicores).to eq(100)
     expect(container.cpu.limit.current_millicores).to eq(1000)
-    expect(container.memory_request_current).to eq(1024)
-    expect(container.memory_limit_current).to eq(2048)
+    expect(container.memory.request.current_mebibytes).to eq(1024)
+    expect(container.memory.limit.current_mebibytes).to eq(2048)
     expect(container.identifier).to eq(identifier)
   end
 

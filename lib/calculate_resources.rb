@@ -3,11 +3,11 @@
 require 'csv'
 require 'json'
 require_relative 'prometheus_client'
-require_relative 'conversion_service'
 require_relative 'item'
 require_relative 'container'
 require_relative 'cpu'
 require_relative 'quantile'
+require_relative 'memory'
 
 PROMETHEUS_URL = 'http://localhost:9090'
 CPU_REQUEST_MULTIPLIER = 1.3

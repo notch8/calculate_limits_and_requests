@@ -35,7 +35,7 @@ RSpec.describe CalculateResources do
   describe 'getting memory maximums' do
     it 'can get the memory maximums from Prometheus' do
       item = calculator.pod_items.first
-      memory_max = item.containers.first.memory_max
+      memory_max = item.containers.first.memory.max.in_bytes
       expect(memory_max).to eq(27_238_400)
     end
   end

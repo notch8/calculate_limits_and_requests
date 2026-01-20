@@ -2,10 +2,15 @@
 
 require 'prometheus'
 RSpec.describe Cpu do
+  include_context 'with access to prometheus'
   let(:current_resources) do
     { requests: { cpu: '100m', memory: '1Gi' }, limits: { cpu: '1', memory: '2Gi' } }
   end
-  let(:cpu) { described_class.new(current_resources:) }
+  let(:cpu) { described_class.new(current_resources:, identifier: '1234', type: :rails_app) }
+
+  it 'can be instantiated' do
+    expect(cpu).to be_an_instance_of(described_class)
+  end
 
   describe Cpu::Request do
     let(:request) { described_class.new(current: '100m', minimum: 100, quantile: 519) }

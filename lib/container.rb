@@ -3,7 +3,7 @@
 ##
 # Represents the container on a kubernetes pod. Used to calculate appropriate requests and limits for that container
 class Container
-  attr_reader :container_json, :identifier, :pod_name, :owner_name, :cpu
+  attr_reader :container_json, :identifier, :pod_name, :owner_name, :cpu, :memory
 
   def initialize(container_json, identifier, pod_name, owner_name)
     @container_json = container_json
@@ -11,6 +11,7 @@ class Container
     @pod_name = pod_name
     @owner_name = owner_name
     @cpu = Cpu.new(identifier:, current_resources: container_json[:resources], type: type)
+    @memory = Memory.new(identifier:, current_resources: container_json[:resources], type: type)
   end
 
   def name
@@ -56,111 +57,34 @@ class Container
   def row
     [
       name, type,
-      current_display, quantile_display, memory_max_mi, recommended_display, stanza
+      current_display, quantile_display, memory.max.in_mi, recommended_raw, stanza
     ].flatten
   end
 
   def current_display
-    [cpu.request.current_millicores, cpu.limit.current_millicores, memory_request_current, memory_limit_current]
+    [cpu.request.current_millicores, cpu.limit.current_millicores, memory.request.current_mebibytes,
+     memory.limit.current_mebibytes]
   end
 
   def quantile_display
     [cpu.quantile.ninety_five_in_millicores, cpu.quantile.ninety_nine_in_millicores,
-     memory_95_quantile_mi, memory_99_quantile_mi]
+     memory.quantile.ninety_five_in_mi, memory.quantile.ninety_nine_in_mi]
   end
 
-  def recommended_display
+  def recommended_raw
     [cpu.request.recommended, cpu.limit.recommended,
-     memory_request_recommended, memory_limit_recommended]
+     memory.request.recommended, memory.limit.recommended]
   end
 
   def stanza
     <<-YAML.chomp
   resources:
     limits:
-      memory: #{memory_limit_display}
+      memory: #{memory.limit.display}
       cpu: #{cpu.limit.display}
     requests:
-      memory: #{memory_request_display}
+      memory: #{memory.request.display}
       cpu: #{cpu.request.display}
     YAML
-  end
-
-  def memory_request_recommended
-    minimum = minimums[:memory_request]
-    return minimum unless memory_95_quantile_b
-
-    multiplied = memory_95_quantile_b * MEMORY_REQUEST_MULTIPLIER
-    [ConversionService.bytes_to_mi(multiplied), minimum].max
-  end
-
-  def memory_request_display
-    if memory_request_recommended_rounded >= 1024
-      "#{memory_request_recommended_rounded / 1024}Gi"
-    else
-      "#{memory_request_recommended_rounded}Mi"
-    end
-  end
-
-  def memory_request_recommended_rounded
-    2**Math.log2(memory_request_recommended).ceil
-  end
-
-  def memory_limit_display
-    if memory_limit_recommended_rounded > 1024
-      "#{memory_limit_recommended_rounded / 1024}Gi"
-    else
-      "#{memory_limit_recommended_rounded}Mi"
-    end
-  end
-
-  def memory_limit_recommended
-    minimum = minimums[:memory_limit]
-    return minimum unless memory_99_quantile_b
-
-    multiplied = memory_99_quantile_b * MEMORY_LIMIT_MULTIPLIER
-    [ConversionService.bytes_to_mi(multiplied), minimum].max
-  end
-
-  def memory_limit_recommended_rounded
-    2**Math.log2(memory_limit_recommended).ceil
-  end
-
-  def memory_request_current
-    ConversionService.k8s_memory_to_mi(container_json.dig(:resources, :requests, :memory))
-  end
-
-  def memory_limit_current
-    ConversionService.k8s_memory_to_mi(container_json.dig(:resources, :limits, :memory))
-  end
-
-  def memory_95_quantile_b
-    @memory_95_quantile_b ||= CalculateResources.new.memory_95_quantiles.select do |quant|
-      quant.name == identifier
-    end.first&.value || nil
-  end
-
-  def memory_95_quantile_mi
-    ConversionService.bytes_to_mi(memory_95_quantile_b)
-  end
-
-  def memory_99_quantile_b
-    @memory_99_quantile_b ||= CalculateResources.new.memory_99_quantiles.select do |quant|
-      quant.name == identifier
-    end.first&.value || nil
-  end
-
-  def memory_99_quantile_mi
-    ConversionService.bytes_to_mi(memory_99_quantile_b)
-  end
-
-  def memory_max
-    @memory_max ||= CalculateResources.new.memory_maximums.select do |quant|
-      quant.name == identifier
-    end.first&.value || nil
-  end
-
-  def memory_max_mi
-    ConversionService.bytes_to_mi(memory_max)
   end
 end
