@@ -3,7 +3,7 @@
 require 'csv'
 require 'json'
 require_relative 'prometheus_client'
-require_relative 'item'
+require_relative 'pod'
 require_relative 'container'
 require_relative 'cpu'
 require_relative 'quantile'
@@ -29,10 +29,10 @@ MINIMUMS = {
 ##
 # Wrapper class for calculating appropriate limits and requests for Kubernetes containers
 class CalculateResources
-  def pod_items
-    @pod_items ||= JSON.parse(`kubectl get pods --all-namespaces -o json`,
-                              symbolize_names: true)[:items].map do |item_json|
-      Item.new(item_json)
+  def all_pods
+    @all_pods ||= JSON.parse(`kubectl get pods --all-namespaces -o json`,
+                             symbolize_names: true)[:items].map do |pod_json|
+      Pod.new(pod_json)
     end
   end
 
@@ -45,7 +45,7 @@ class CalculateResources
   end
 
   def write_pods(csv)
-    pod_items.each do |pod|
+    all_pods.each do |pod|
       pod.write_pod_and_containers(csv)
     end
   end

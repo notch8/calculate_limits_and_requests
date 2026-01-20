@@ -9,13 +9,13 @@ RSpec.describe CalculateResources do
 
   describe 'creating pod items' do
     it 'can generate an array of items' do
-      expect(calculator.pod_items.first).to be_an_instance_of(Item)
+      expect(calculator.all_pods.first).to be_an_instance_of(Pod)
     end
   end
 
   describe 'combining pod items with quantiles' do
     it 'can assign values to Item' do
-      item = calculator.pod_items.first
+      item = calculator.all_pods.first
       item.containers.first.cpu.quantile.ninety_nine_in_cores
       quantile = item.containers.first.cpu.quantile.ninety_five_in_cores
       expect(quantile).to eq(0.0011895495658745458)
@@ -34,7 +34,7 @@ RSpec.describe CalculateResources do
 
   describe 'getting memory maximums' do
     it 'can get the memory maximums from Prometheus' do
-      item = calculator.pod_items.first
+      item = calculator.all_pods.first
       memory_max = item.containers.first.memory.max.in_bytes
       expect(memory_max).to eq(27_238_400)
     end

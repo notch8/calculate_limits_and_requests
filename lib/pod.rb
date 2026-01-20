@@ -3,7 +3,7 @@
 ##
 # Represents a kubernetes pod. Should probably be renamed to Pod
 # TODO: Rename to Pod
-class Item
+class Pod
   attr_reader :item_json
 
   def initialize(item_json)

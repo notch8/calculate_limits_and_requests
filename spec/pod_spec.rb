@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require 'prometheus'
-RSpec.describe Item do
+RSpec.describe Pod do
   include_context 'with access to prometheus'
-  let(:item_json) do
+  let(:pod_json) do
     {
       spec: {
         containers: [
@@ -35,12 +35,12 @@ RSpec.describe Item do
   end
 
   it 'has a bunch of things available on it' do
-    item = described_class.new(item_json)
+    pod = described_class.new(pod_json)
 
-    expect(item.namespace).to eq('crash-world-cake-friends')
-    expect(item.owner_kind).to eq('ReplicaSet')
-    expect(item.owner_name).to eq('crash-world-cake-friends-hyrax-auxiliary-worker')
-    expect(item.containers.first).to be_an_instance_of(Container)
-    expect(item.containers.first.identifier).to eq('362ceb96e7974476a747003788070192bb53a8c32422dc098780e76404f5ecc9')
+    expect(pod.namespace).to eq('crash-world-cake-friends')
+    expect(pod.owner_kind).to eq('ReplicaSet')
+    expect(pod.owner_name).to eq('crash-world-cake-friends-hyrax-auxiliary-worker')
+    expect(pod.containers.first).to be_an_instance_of(Container)
+    expect(pod.containers.first.identifier).to eq('362ceb96e7974476a747003788070192bb53a8c32422dc098780e76404f5ecc9')
   end
 end
