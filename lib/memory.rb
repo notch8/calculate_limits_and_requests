@@ -7,17 +7,36 @@ class Memory
 
   def initialize(identifier:, current_resources:, type:)
     @quantile = Quantile.new(identifier:)
+    minimums = MINIMUMS[type]
     @request = Request.new(current: current_resources.dig(:requests, :memory),
-                           minimum: MINIMUMS[type][:memory_request],
+                           minimum: minimums[:memory_request],
                            quantile: quantile.ninety_five_in_mi)
     @limit = Limit.new(current: current_resources.dig(:limits, :memory),
-                       minimum: MINIMUMS[type][:memory_limit],
+                       minimum: minimums[:memory_limit],
                        quantile: quantile.ninety_nine_in_mi)
     @max = Max.new(identifier:)
   end
 
+  def self.prometheus_command(quantile)
+    <<~CMD.chomp
+      quantile_over_time(#{quantile}, container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d:1m])
+    CMD
+  end
+
+  def self.ninety_five_quantiles
+    @ninety_five_quantiles ||= PrometheusClient.new(quantile: 0.95, compute_type: 'memory').quantile_list
+  end
+
+  def self.ninety_nine_quantiles
+    @ninety_nine_quantiles ||= PrometheusClient.new(quantile: 0.99, compute_type: 'memory').quantile_list
+  end
+
+  def self.memory_maximums
+    @memory_maximums ||= PrometheusClient.new(quantile: nil, compute_type: 'memory').max_memory_list
+  end
+
   def self.string_to_mebibytes(string:)
-    return nil if string&.empty? || string.nil?
+    return nil if string&.empty? # || string.nil?
 
     as_integer = string[0..-3].to_i
     if string.match(/Mi$/)
@@ -64,8 +83,12 @@ class Memory
       @quantile = quantile
     end
 
+    def current_string
+      current || ''
+    end
+
     def current_normalized
-      Memory.string_to_mebibytes(string: current)
+      Memory.string_to_mebibytes(string: current_string)
     end
 
     def display
@@ -121,13 +144,13 @@ class Memory
     end
 
     def ninety_five_in_bytes
-      @ninety_five_in_bytes ||= CalculateResources.new.memory_95_quantiles.select do |quant|
+      @ninety_five_in_bytes ||= Memory.ninety_five_quantiles.select do |quant|
         quant.name == identifier
       end.first&.value || nil
     end
 
     def ninety_nine_in_bytes
-      @ninety_nine_in_bytes ||= CalculateResources.new.memory_99_quantiles.select do |quant|
+      @ninety_nine_in_bytes ||= Memory.ninety_nine_quantiles.select do |quant|
         quant.name == identifier
       end.first&.value || nil
     end
@@ -143,7 +166,7 @@ class Memory
     end
 
     def in_bytes
-      @in_bytes ||= CalculateResources.new.memory_maximums.select do |quant|
+      @in_bytes ||= Memory.memory_maximums.select do |quant|
         quant.name == identifier
       end.first&.value || nil
     end

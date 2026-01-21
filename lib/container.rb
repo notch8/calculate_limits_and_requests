@@ -5,36 +5,29 @@
 class Container
   attr_reader :container_json, :identifier, :cpu, :memory
 
-  def initialize(container_json, identifier, pod_name, owner_name)
+  def initialize(container_json, identifier)
     @container_json = container_json
     @identifier = identifier
-    @combined = "#{pod_name} #{name} #{owner_name}".downcase
     resources = container_json[:resources]
     @cpu = Cpu.new(identifier:, current_resources: resources, type: type)
     @memory = Memory.new(identifier:, current_resources: resources, type: type)
   end
+
+  CONTAINER_TYPES = {
+    cache: /redis|memcached/,
+    database: /postgres|postgresql|mysql|mariadb/,
+    fcrepo: /fcrepo/,
+    java_app: /fits|solr|elasticsearch/,
+    rails_app: /hyrax|hyku|rails|puma|passenger|worker|sidekiq|job|cable|clockwork|web/,
+    utility: /nginx/
+  }.freeze
 
   def name
     container_json[:name]
   end
 
   def type
-    case @combined
-    when /redis|memcached/
-      :cache
-    when /postgres|postgresql|mysql|mariadb/
-      :database
-    when /fcrepo/
-      :fcrepo
-    when /fits|solr|elasticsearch/
-      :java_app
-    when /nginx|webhook/
-      :utility
-    when /hyrax|hyku|rails|puma|passenger|worker|sidekiq|job|cable|clockwork|web/
-      :rails_app
-    else
-      :utility
-    end
+    CONTAINER_TYPES.find { |_type, pattern| name.downcase.match?(pattern) }&.first || :utility
   end
 
   def minimums

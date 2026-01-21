@@ -7,17 +7,32 @@ class Cpu
 
   def initialize(identifier:, current_resources:, type:)
     @quantile = Quantile.new(identifier:)
+    minimums = MINIMUMS[type]
     @request = Request.new(current: current_resources.dig(:requests, :cpu),
-                           minimum: MINIMUMS[type][:cpu_request],
+                           minimum: minimums[:cpu_request],
                            quantile: quantile.ninety_five_in_millicores)
     @limit = Limit.new(current: current_resources.dig(:limits, :cpu),
-                       minimum: MINIMUMS[type][:cpu_limit],
+                       minimum: minimums[:cpu_limit],
                        quantile: quantile.ninety_nine_in_millicores)
     @type = type
   end
 
+  def self.prometheus_command(quantile)
+    <<~CMD.chomp
+      quantile_over_time(#{quantile}, rate(container_cpu_usage_seconds_total{container!="",namespace!~"kube-.*"}[5m])[10d:5m])
+    CMD
+  end
+
+  def self.ninety_five_quantiles
+    @ninety_five_quantiles ||= PrometheusClient.new(quantile: 0.95, compute_type: 'cpu').quantile_list
+  end
+
+  def self.ninety_nine_quantiles
+    @ninety_nine_quantiles ||= PrometheusClient.new(quantile: 0.99, compute_type: 'cpu').quantile_list
+  end
+
   def self.string_to_millicores(string:)
-    return nil if string&.empty? || string.nil?
+    return nil if string&.empty?
 
     if string.match(/m$/)
       string.chop.to_i
@@ -61,8 +76,8 @@ class Cpu
   end
 
   ##
-  # Requests for Cpu objects
-  class Request
+  # Shared between CPU limits and requests
+  class CpuComputeResource
     attr_reader :current, :minimum, :quantile
 
     def initialize(current:, minimum:, quantile:)
@@ -72,11 +87,11 @@ class Cpu
     end
 
     def current_string
-      current
+      current || ''
     end
 
     def current_millicores
-      Cpu.string_to_millicores(string: current)
+      Cpu.string_to_millicores(string: current_string)
     end
 
     def recommended
@@ -86,7 +101,11 @@ class Cpu
     def display
       Cpu.millicores_to_string(millicores: recommended)
     end
+  end
 
+  ##
+  # Requests for Cpu objects
+  class Request < CpuComputeResource
     private
 
     def recommendation_in_millicores_raw
@@ -100,31 +119,7 @@ class Cpu
 
   ##
   # Limits for Cpu objects
-  class Limit
-    attr_reader :current, :minimum, :quantile
-
-    def initialize(current:, minimum:, quantile:)
-      @current = current
-      @minimum = minimum
-      @quantile = quantile
-    end
-
-    def current_string
-      current
-    end
-
-    def display
-      Cpu.millicores_to_string(millicores: recommended)
-    end
-
-    def current_millicores
-      Cpu.string_to_millicores(string: current)
-    end
-
-    def recommended
-      Cpu.round(millicores: recommendation_in_millicores_raw)
-    end
-
+  class Limit < CpuComputeResource
     private
 
     def recommendation_in_millicores_raw
@@ -150,7 +145,7 @@ class Cpu
     end
 
     def ninety_five_in_cores
-      @ninety_five_in_cores ||= CalculateResources.new.cpu_95_quantiles.select do |quant|
+      @ninety_five_in_cores ||= Cpu.ninety_five_quantiles.select do |quant|
         quant.name == identifier
       end.first&.value || nil
     end
@@ -160,7 +155,7 @@ class Cpu
     end
 
     def ninety_nine_in_cores
-      @ninety_nine_in_cores ||= CalculateResources.new.cpu_99_quantiles.select do |quant|
+      @ninety_nine_in_cores ||= Cpu.ninety_nine_quantiles.select do |quant|
         quant.name == identifier
       end.first&.value || nil
     end

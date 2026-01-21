@@ -3,10 +3,7 @@
 require 'prometheus'
 RSpec.describe Container do
   include_context 'with access to prometheus'
-  let(:container) do
-    described_class.new(container_json, identifier, 'hyku-demo-hyrax-worker-64b578df7f-dghnr',
-                        'hyku-demo-hyrax-worker')
-  end
+  let(:container) { described_class.new(container_json, identifier) }
   let(:identifier) { '362ceb96e7974476a747003788070192bb53a8c32422dc098780e76404f5ecc9' }
   let(:container_json) do
     {
@@ -65,14 +62,15 @@ RSpec.describe Container do
   end
 
   describe '#type' do
-    let(:container) do
-      described_class.new(container_json, identifier, pod_name, owner_name)
-    end
-
     context 'with a redis pod' do
-      let(:container) do
-        described_class.new(container_json, identifier, 'hyku-demo-redis-master',
-                            'hyku-demo-redis-master-64b578df7f-dghnr')
+      let(:container_json) do
+        {
+          name: 'redis',
+          resources: {
+            requests: { cpu: '100m', memory: '1Gi' },
+            limits: { cpu: '1', memory: '2Gi' }
+          }
+        }
       end
 
       it 'ignores namespaces' do
@@ -81,9 +79,14 @@ RSpec.describe Container do
     end
 
     context 'with an nginx pod' do
-      let(:container) do
-        described_class.new(container_json, identifier, 'hyku-iiif-nginx',
-                            'hyku-iiif-nginx-0')
+      let(:container_json) do
+        {
+          name: 'nginx',
+          resources: {
+            requests: { cpu: '100m', memory: '1Gi' },
+            limits: { cpu: '1', memory: '2Gi' }
+          }
+        }
       end
 
       it 'ignores namespaces' do

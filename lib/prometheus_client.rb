@@ -38,22 +38,10 @@ class PrometheusClient
 
   def quantile_query_string
     if compute_type == 'cpu'
-      cpu_command(quantile)
+      Cpu.prometheus_command(quantile)
     else
-      memory_command(quantile)
+      Memory.prometheus_command(quantile)
     end
-  end
-
-  def cpu_command(quantile)
-    <<~CMD.chomp
-      quantile_over_time(#{quantile}, rate(container_cpu_usage_seconds_total{container!="",namespace!~"kube-.*"}[5m])[10d:5m])
-    CMD
-  end
-
-  def memory_command(quantile)
-    <<~CMD.chomp
-      quantile_over_time(#{quantile}, container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d:1m])
-    CMD
   end
 
   def max_memory_query_string

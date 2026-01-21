@@ -49,26 +49,6 @@ class CalculateResources
       pod.write_pod_and_containers(csv)
     end
   end
-
-  def cpu_95_quantiles
-    PrometheusClient.new(quantile: 0.95, compute_type: 'cpu').quantile_list
-  end
-
-  def cpu_99_quantiles
-    PrometheusClient.new(quantile: 0.99, compute_type: 'cpu').quantile_list
-  end
-
-  def memory_95_quantiles
-    PrometheusClient.new(quantile: 0.95, compute_type: 'memory').quantile_list
-  end
-
-  def memory_99_quantiles
-    PrometheusClient.new(quantile: 0.99, compute_type: 'memory').quantile_list
-  end
-
-  def memory_maximums
-    PrometheusClient.new(quantile: nil, compute_type: 'memory').max_memory_list
-  end
 end
 
 ##

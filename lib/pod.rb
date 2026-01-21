@@ -30,7 +30,7 @@ class Pod
     item_json.dig(:spec, :containers).map.with_index do |container_json, index|
       foo = item_json.dig(:status, :containerStatuses, index, :containerID)
       match_data = foo.match(%r{containerd://(?<identifier>\w*)})
-      Container.new(container_json, match_data[:identifier], name, owner_name)
+      Container.new(container_json, match_data[:identifier])
     end
   end
 
