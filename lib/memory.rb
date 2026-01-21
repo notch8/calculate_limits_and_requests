@@ -109,7 +109,7 @@ class Memory
       return minimum unless quantile
 
       multiplied = quantile * MEMORY_REQUEST_MULTIPLIER
-      [Memory.bytes_to_mi(bytes: multiplied), minimum].max
+      [multiplied, minimum].max
     end
   end
 
@@ -122,7 +122,7 @@ class Memory
       return minimum unless quantile
 
       multiplied = quantile * MEMORY_LIMIT_MULTIPLIER
-      [Memory.bytes_to_mi(bytes: multiplied), minimum].max
+      [multiplied, minimum].max
     end
   end
 

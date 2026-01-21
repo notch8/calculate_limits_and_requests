@@ -12,6 +12,21 @@ RSpec.describe Cpu do
     expect(cpu).to be_an_instance_of(described_class)
   end
 
+  context 'with large values from prometheus' do
+    let(:quantile_mock) { instance_double(Cpu::Quantile, ninety_five_in_millicores: 8_000, ninety_nine_in_millicores: 9_250) }
+
+    before do
+      allow(Cpu::Quantile).to receive(:new).and_return(quantile_mock)
+    end
+
+    it 'comes up with a reasonable recommendation' do
+      expect(cpu.limit.recommended).to eq(14_000)
+      expect(cpu.limit.display).to eq('14')
+      expect(cpu.request.recommended).to eq(10_500)
+      expect(cpu.request.display).to eq('10.5')
+    end
+  end
+
   describe Cpu::Request do
     let(:request) { described_class.new(current: '100m', minimum: 100, quantile: 519) }
 

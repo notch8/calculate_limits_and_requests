@@ -15,7 +15,7 @@ CPU_LIMIT_MULTIPLIER = 1.5
 MEMORY_REQUEST_MULTIPLIER = 1.2
 MEMORY_LIMIT_MULTIPLIER = 1.3
 
-# CPU values are in millicores
+# CPU values are in millicores (m)
 # Memory values are in Mebibytes (Mi)
 MINIMUMS = {
   rails_app: { cpu_request: 100, cpu_limit: 1000, memory_request: 2048, memory_limit: 4096 },

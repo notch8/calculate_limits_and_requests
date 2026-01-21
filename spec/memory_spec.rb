@@ -12,6 +12,19 @@ RSpec.describe Memory do
     expect(memory).to be_an_instance_of(described_class)
   end
 
+  context 'with large values from prometheus' do
+    let(:quantile_mock) { instance_double(Memory::Quantile, ninety_five_in_mi: 27_221, ninety_nine_in_mi: 31_772) }
+
+    before do
+      allow(Memory::Quantile).to receive(:new).and_return(quantile_mock)
+    end
+
+    it 'comes up with a reasonable recommendation' do
+      expect(memory.limit.display).to eq('40Gi')
+      expect(memory.request.display).to eq('32Gi')
+    end
+  end
+
   context 'with memory values from kubernetes' do
     it 'translates between human readable k8s memory vals and numeric ones' do
       expect(described_class.string_to_mebibytes(string: '')).to be_nil
@@ -39,6 +52,10 @@ RSpec.describe Memory do
       expect(described_class.round(mebibytes: 1050)).to eq(1536)
       expect(described_class.round(mebibytes: 6000)).to eq(6144)
     end
+
+    it 'comes up with sufficiently large numbers' do
+      expect(described_class.round(mebibytes: 27_221)).to eq(27_648)
+    end
   end
 
   describe '#mebibytes_to_string' do
@@ -48,6 +65,7 @@ RSpec.describe Memory do
 
     it 'conversts to Gi for larger numbers' do
       expect(described_class.mebibytes_to_string(mebibytes: 6144)).to eq('6Gi')
+      expect(described_class.mebibytes_to_string(mebibytes: 27_648)).to eq('27Gi')
     end
   end
 end
