@@ -47,9 +47,9 @@ RSpec.describe CalculateResources do
       expect(deployments.first).to be_an_instance_of(Deployment)
     end
 
-    it 'creates unique deployments for each namespace/owner combination' do
+    it 'creates unique deployments for each namespace/owner/container combination' do
       deployments = calculator.deployments
-      deployment_keys = deployments.map { |d| "#{d.namespace}/#{d.owner_name}" }
+      deployment_keys = deployments.map { |d| "#{d.namespace}/#{d.owner_name}/#{d.container_name}" }
       expect(deployment_keys.uniq.length).to eq(deployment_keys.length)
     end
 
@@ -82,11 +82,12 @@ RSpec.describe CalculateResources do
       calculator.write_deployments(csv_rows)
       csv_rows.each do |row|
         expect(row).to be_an(Array)
-        expect(row.length).to eq(18) # All deployment columns
+        expect(row.length).to eq(19) # All deployment columns
         expect(row[0]).to be_a(String) # namespace
         expect(row[1]).to be_a(String) # owner_name
-        expect(row[2]).to be_a(Symbol) # deployment_type
-        expect(row[3]).to be_an(Integer) # container_count
+        expect(row[2]).to be_a(String) # container_name
+        expect(row[3]).to be_a(Symbol) # container_type
+        expect(row[4]).to be_an(Integer) # pod_count
       end
     end
   end
@@ -107,19 +108,19 @@ RSpec.describe CalculateResources do
       expect(csv_content.length).to be > 1 # At least headers + one row
     end
 
-    it 'groups containers by deployment in CSV output' do
+    it 'groups containers by deployment and container name in CSV output' do
       calculator.write_csv
       csv_content = CSV.read('right-sizing-output.csv')
 
       # Skip header row
       data_rows = csv_content[1..]
 
-      # Each row should represent a unique deployment
-      deployment_identifiers = data_rows.map { |row| "#{row[0]}/#{row[1]}" }
+      # Each row should represent a unique namespace/owner/container combination
+      deployment_identifiers = data_rows.map { |row| "#{row[0]}/#{row[1]}/#{row[2]}" }
       expect(deployment_identifiers.uniq.length).to eq(deployment_identifiers.length)
     end
 
-    it 'includes container count in CSV output' do
+    it 'includes pod count in CSV output' do
       calculator.write_csv
       csv_content = CSV.read('right-sizing-output.csv')
 
@@ -127,8 +128,22 @@ RSpec.describe CalculateResources do
       data_rows = csv_content[1..]
 
       data_rows.each do |row|
-        container_count = row[3].to_i # container_count column
-        expect(container_count).to be > 0
+        pod_count = row[4].to_i # pod_count column
+        expect(pod_count).to be > 0
+      end
+    end
+
+    it 'includes container name in CSV output' do
+      calculator.write_csv
+      csv_content = CSV.read('right-sizing-output.csv')
+
+      # Skip header row
+      data_rows = csv_content[1..]
+
+      data_rows.each do |row|
+        container_name = row[2] # container column
+        expect(container_name).to be_a(String)
+        expect(container_name).not_to be_empty
       end
     end
 
@@ -140,7 +155,7 @@ RSpec.describe CalculateResources do
       data_rows = csv_content[1..]
 
       data_rows.each do |row|
-        stanza = row[17] # stanza is last column
+        stanza = row[18] # stanza is last column
         expect(stanza).to include('resources:')
         expect(stanza).to include('limits:')
         expect(stanza).to include('requests:')

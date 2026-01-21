@@ -1,24 +1,15 @@
 # frozen_string_literal: true
 
 ##
-# Represents a Kubernetes deployment, grouping all containers across all pods
-# Calculates maximum values across all containers for right-sizing recommendations
+# Represents a group of containers with the same name across pods in a deployment
+# Calculates maximum values across all instances of this container for right-sizing
 class Deployment
-  attr_reader :namespace, :owner_name, :containers
+  attr_reader :namespace, :owner_name, :container_name, :containers
 
-  # Container type priority (higher priority types take precedence)
-  TYPE_PRIORITY = {
-    rails_app: 5,
-    java_app: 4,
-    fcrepo: 3,
-    database: 2,
-    cache: 1,
-    utility: 0
-  }.freeze
-
-  def initialize(namespace:, owner_name:, containers: [])
+  def initialize(namespace:, owner_name:, container_name:, containers: [])
     @namespace = namespace
     @owner_name = owner_name
+    @container_name = container_name
     @containers = containers
   end
 
@@ -26,9 +17,14 @@ class Deployment
     @containers << container
   end
 
-  # Returns the most demanding container type in this deployment
-  def primary_type
-    containers.map(&:type).max_by { |type| TYPE_PRIORITY[type] } || :utility
+  # Returns the container type (should be consistent across all instances)
+  def container_type
+    containers.first&.type || :utility
+  end
+
+  # Returns the number of pod instances with this container
+  def pod_count
+    containers.length
   end
 
   # Calculate maximum current CPU request across all containers
@@ -133,10 +129,10 @@ class Deployment
     YAML
   end
 
-  # CSV headers for deployment-level output
+  # CSV headers for container-grouped output
   def self.headers
     %w[
-      namespace owner deployment_type container_count
+      namespace owner container container_type pod_count
       cpu_request_current cpu_limit_current memory_request_current memory_limit_current
       cpu_95_m cpu_99_m memory_95_mi memory_99_mi memory_max_mi
       cpu_request_recommended_mi cpu_limit_recommended_m memory_request_recommended_mi
@@ -149,8 +145,9 @@ class Deployment
     [
       namespace,
       owner_name,
-      primary_type,
-      containers.length,
+      container_name,
+      container_type,
+      pod_count,
       max_cpu_request_current,
       max_cpu_limit_current,
       max_memory_request_current,

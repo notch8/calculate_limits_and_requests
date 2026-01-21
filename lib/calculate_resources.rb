@@ -42,14 +42,15 @@ class CalculateResources
       deployment_hash = {}
 
       all_pods.each do |pod|
-        key = "#{pod.namespace}/#{pod.owner_name}"
-
-        deployment_hash[key] ||= Deployment.new(
-          namespace: pod.namespace,
-          owner_name: pod.owner_name
-        )
-
         pod.containers.each do |container|
+          key = "#{pod.namespace}/#{pod.owner_name}/#{container.name}"
+
+          deployment_hash[key] ||= Deployment.new(
+            namespace: pod.namespace,
+            owner_name: pod.owner_name,
+            container_name: container.name
+          )
+
           deployment_hash[key].add_container(container)
         end
       end
