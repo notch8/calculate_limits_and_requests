@@ -1,6 +1,23 @@
 # frozen_string_literal: true
 
 ##
+# Custom error to remind to forward Prometheus pod to gather metrics
+class PrometheusClientError < StandardError
+  def initialize(msg = custom_message)
+    super
+  end
+
+  def custom_message
+    <<~MESSAGE
+      Empty response from Prometheus - make sure you have run the following in another terminal window:
+
+      kubectl port-forward -n cattle-monitoring-system \\
+      svc/rancher-monitoring-prometheus 9090:9090
+    MESSAGE
+  end
+end
+
+##
 # Utility class for connecting with Prometheus metrics API
 # Right now this is a bit too intertwined with the "Quantile" concept
 class PrometheusClient
@@ -29,7 +46,14 @@ class PrometheusClient
   end
 
   def quantile_data
-    @quantile_data ||= JSON.parse(`#{curl_command(quantile_query_string)}`, symbolize_names: true).dig(:data, :result)
+    @quantile_data ||= JSON.parse(response, symbolize_names: true).dig(:data, :result)
+  end
+
+  def response
+    response = `#{curl_command(quantile_query_string)}`
+    raise PrometheusClientError if response.empty?
+
+    response
   end
 
   def curl_command(query)

@@ -322,7 +322,7 @@ end
 
 ### No Metrics for New Deployments
 
-**Symptom:** `cpu_p95_m` and similar columns show "no-data".
+**Symptom:** `cpu_p95_m` and similar columns are empty.
 
 **Cause:** Deployment is less than 7 days old or Prometheus hasn't collected metrics yet.
 
@@ -375,7 +375,7 @@ helm list -n $NAMESPACE  # Verify status is now "failed" or previous revision
 
 3. **Run the script:**
 ```bash
-   ruby calculate-resources.rb
+   ruby bin/calculate_resources.rb
 ```
 
 4. **Apply recommendations** following the same process as above.
