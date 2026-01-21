@@ -39,4 +39,112 @@ RSpec.describe CalculateResources do
       expect(memory_max).to eq(27_238_400)
     end
   end
+
+  describe '#deployments' do
+    it 'groups pods by namespace and owner_name' do
+      deployments = calculator.deployments
+      expect(deployments).to be_an(Array)
+      expect(deployments.first).to be_an_instance_of(Deployment)
+    end
+
+    it 'creates unique deployments for each namespace/owner combination' do
+      deployments = calculator.deployments
+      deployment_keys = deployments.map { |d| "#{d.namespace}/#{d.owner_name}" }
+      expect(deployment_keys.uniq.length).to eq(deployment_keys.length)
+    end
+
+    it 'aggregates all containers from pods with the same deployment' do
+      deployments = calculator.deployments
+      # Each deployment should have at least one container
+      deployments.each do |deployment|
+        expect(deployment.containers).not_to be_empty
+      end
+    end
+
+    it 'includes containers from all pods in the deployment' do
+      deployments = calculator.deployments
+      total_containers_in_deployments = deployments.sum { |d| d.containers.length }
+      total_containers_in_pods = calculator.all_pods.sum { |p| p.containers.length }
+      expect(total_containers_in_deployments).to eq(total_containers_in_pods)
+    end
+  end
+
+  describe '#write_deployments' do
+    it 'writes deployment rows to CSV' do
+      csv_rows = []
+      calculator.write_deployments(csv_rows)
+      expect(csv_rows).not_to be_empty
+      expect(csv_rows.length).to eq(calculator.deployments.length)
+    end
+
+    it 'writes rows with correct structure' do
+      csv_rows = []
+      calculator.write_deployments(csv_rows)
+      csv_rows.each do |row|
+        expect(row).to be_an(Array)
+        expect(row.length).to eq(18) # All deployment columns
+        expect(row[0]).to be_a(String) # namespace
+        expect(row[1]).to be_a(String) # owner_name
+        expect(row[2]).to be_a(Symbol) # deployment_type
+        expect(row[3]).to be_an(Integer) # container_count
+      end
+    end
+  end
+
+  describe 'generating a deployment CSV' do
+    it 'generates a CSV with deployment-level data' do
+      calculator.write_csv
+      expect(File.exist?('right-sizing-output.csv')).to be(true)
+
+      csv_content = CSV.read('right-sizing-output.csv')
+      expect(csv_content).not_to be_empty
+
+      # Check headers
+      headers = csv_content.first
+      expect(headers).to eq(Deployment.headers)
+
+      # Check that we have deployment rows
+      expect(csv_content.length).to be > 1 # At least headers + one row
+    end
+
+    it 'groups containers by deployment in CSV output' do
+      calculator.write_csv
+      csv_content = CSV.read('right-sizing-output.csv')
+
+      # Skip header row
+      data_rows = csv_content[1..]
+
+      # Each row should represent a unique deployment
+      deployment_identifiers = data_rows.map { |row| "#{row[0]}/#{row[1]}" }
+      expect(deployment_identifiers.uniq.length).to eq(deployment_identifiers.length)
+    end
+
+    it 'includes container count in CSV output' do
+      calculator.write_csv
+      csv_content = CSV.read('right-sizing-output.csv')
+
+      # Skip header row
+      data_rows = csv_content[1..]
+
+      data_rows.each do |row|
+        container_count = row[3].to_i # container_count column
+        expect(container_count).to be > 0
+      end
+    end
+
+    it 'includes stanza in CSV output' do
+      calculator.write_csv
+      csv_content = CSV.read('right-sizing-output.csv')
+
+      # Skip header row
+      data_rows = csv_content[1..]
+
+      data_rows.each do |row|
+        stanza = row[17] # stanza is last column
+        expect(stanza).to include('resources:')
+        expect(stanza).to include('limits:')
+        expect(stanza).to include('requests:')
+      end
+    end
+  end
 end

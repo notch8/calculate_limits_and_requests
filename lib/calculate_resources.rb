@@ -8,6 +8,7 @@ require_relative 'container'
 require_relative 'cpu'
 require_relative 'quantile'
 require_relative 'memory'
+require_relative 'deployment'
 
 PROMETHEUS_URL = 'http://localhost:9090'
 CPU_REQUEST_MULTIPLIER = 1.3
@@ -36,14 +37,42 @@ class CalculateResources
     end
   end
 
-  def write_csv
-    headers = ['namespace', 'owner', Container.headers].flatten
-    CSV.open('right-sizing-output.csv', 'w') do |csv|
-      csv << headers
-      write_pods(csv)
+  def deployments
+    @deployments ||= begin
+      deployment_hash = {}
+
+      all_pods.each do |pod|
+        key = "#{pod.namespace}/#{pod.owner_name}"
+
+        deployment_hash[key] ||= Deployment.new(
+          namespace: pod.namespace,
+          owner_name: pod.owner_name
+        )
+
+        pod.containers.each do |container|
+          deployment_hash[key].add_container(container)
+        end
+      end
+
+      deployment_hash.values
     end
   end
 
+  def write_csv
+    headers = Deployment.headers
+    CSV.open('right-sizing-output.csv', 'w') do |csv|
+      csv << headers
+      write_deployments(csv)
+    end
+  end
+
+  def write_deployments(csv)
+    deployments.each do |deployment|
+      csv << deployment.row
+    end
+  end
+
+  # Legacy method for writing individual container rows (kept for compatibility)
   def write_pods(csv)
     all_pods.each do |pod|
       pod.write_pod_and_containers(csv)
