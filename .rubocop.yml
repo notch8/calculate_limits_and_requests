@@ -12,6 +12,7 @@ plugins:
   - rubocop-performance
   - rubocop-rspec
 AllCops:
+  TargetRubyVersion: 3.4
   Exclude: 
   - "**/spec/fixtures/*"
   - 'node_modules/**/*'
