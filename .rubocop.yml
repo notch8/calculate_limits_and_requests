@@ -14,6 +14,8 @@ plugins:
 AllCops:
   Exclude: 
   - "**/spec/fixtures/*"
+  - 'node_modules/**/*'
+  - 'vendor/**/*'
   NewCops: enable
 
 RSpec/MultipleExpectations:
