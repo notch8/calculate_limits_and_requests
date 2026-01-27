@@ -10,5 +10,6 @@ group :test, :development do
   gem 'reek', '~> 6.5', require: false
   gem 'rspec', require: false
   gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
   gem 'rubocop-rspec', require: false
 end
