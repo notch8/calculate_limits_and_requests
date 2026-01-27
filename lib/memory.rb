@@ -39,9 +39,9 @@ class Memory
     return nil if string&.empty? # || string.nil?
 
     as_integer = string[0..-3].to_i
-    if string.match(/Mi$/)
+    if string.match?(/Mi$/)
       as_integer
-    elsif string.match(/Gi$/)
+    elsif string.match?(/Gi$/)
       as_integer * 1024
     end
   end
@@ -144,15 +144,15 @@ class Memory
     end
 
     def ninety_five_in_bytes
-      @ninety_five_in_bytes ||= Memory.ninety_five_quantiles.select do |quant|
+      @ninety_five_in_bytes ||= Memory.ninety_five_quantiles.find do |quant|
         quant.name == identifier
-      end.first&.value || nil
+      end&.value || nil
     end
 
     def ninety_nine_in_bytes
-      @ninety_nine_in_bytes ||= Memory.ninety_nine_quantiles.select do |quant|
+      @ninety_nine_in_bytes ||= Memory.ninety_nine_quantiles.find do |quant|
         quant.name == identifier
-      end.first&.value || nil
+      end&.value || nil
     end
   end
 
@@ -166,9 +166,9 @@ class Memory
     end
 
     def in_bytes
-      @in_bytes ||= Memory.memory_maximums.select do |quant|
+      @in_bytes ||= Memory.memory_maximums.find do |quant|
         quant.name == identifier
-      end.first&.value || nil
+      end&.value || nil
     end
 
     def in_mi

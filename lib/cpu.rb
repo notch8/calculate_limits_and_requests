@@ -34,7 +34,7 @@ class Cpu
   def self.string_to_millicores(string:)
     return nil if string&.empty?
 
-    if string.match(/m$/)
+    if string.match?(/m$/)
       string.chop.to_i
     else
       string.to_i * 1_000
@@ -145,9 +145,9 @@ class Cpu
     end
 
     def ninety_five_in_cores
-      @ninety_five_in_cores ||= Cpu.ninety_five_quantiles.select do |quant|
+      @ninety_five_in_cores ||= Cpu.ninety_five_quantiles.find do |quant|
         quant.name == identifier
-      end.first&.value || nil
+      end&.value || nil
     end
 
     def ninety_nine_in_millicores
@@ -155,9 +155,9 @@ class Cpu
     end
 
     def ninety_nine_in_cores
-      @ninety_nine_in_cores ||= Cpu.ninety_nine_quantiles.select do |quant|
+      @ninety_nine_in_cores ||= Cpu.ninety_nine_quantiles.find do |quant|
         quant.name == identifier
-      end.first&.value || nil
+      end&.value || nil
     end
   end
 end
