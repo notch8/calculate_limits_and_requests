@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 ##
-# Represents a kubernetes pod. Should probably be renamed to Pod
-# TODO: Rename to Pod
+# Represents a kubernetes pod.
 class Pod
   attr_reader :item_json
 
@@ -27,10 +26,8 @@ class Pod
   end
 
   def containers
-    item_json.dig(:spec, :containers).map.with_index do |container_json, index|
-      foo = item_json.dig(:status, :containerStatuses, index, :containerID)
-      match_data = foo.match(%r{containerd://(?<identifier>\w*)})
-      Container.new(container_json, match_data[:identifier])
+    item_json.dig(:spec, :containers).map do |container_json|
+      Container.new(container_json, container_identifier(container_json:))
     end
   end
 
@@ -39,5 +36,13 @@ class Pod
     containers.each do |container|
       csv << [item_info, container.row].flatten
     end
+  end
+
+  private
+
+  def container_identifier(container_json:)
+    item_json.dig(:status, :containerStatuses).find do |stat|
+      stat[:name] == container_json[:name]
+    end[:containerID].match(%r{containerd://(?<identifier>\w*)})[:identifier]
   end
 end
