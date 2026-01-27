@@ -7,6 +7,7 @@ gem 'json'
 
 group :test, :development do
   gem 'pry-byebug'
+  gem 'reek', '~> 6.5'
   gem 'rspec'
   gem 'rubocop'
   gem 'rubocop-rspec'
