@@ -6,9 +6,9 @@ gem 'csv'
 gem 'json'
 
 group :test, :development do
-  gem 'pry-byebug'
-  gem 'reek', '~> 6.5'
-  gem 'rspec'
-  gem 'rubocop'
-  gem 'rubocop-rspec'
+  gem 'pry-byebug', require: false
+  gem 'reek', '~> 6.5', require: false
+  gem 'rspec', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
