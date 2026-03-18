@@ -60,15 +60,15 @@ The script will verify you're in the correct context before running.
 
 In a separate terminal, create a port-forward to Prometheus:
 ```bash
-kubectl port-forward -n cattle-monitoring-system \
-  svc/rancher-monitoring-prometheus 9090:9090
+kubectl port-forward -n monitoring \
+  svc/kube-prometheus-stack-prometheus 9090:9090
 ```
 
 **Important:** Keep this running while the script executes.
 
 ### Step 3: Run the Script
 ```bash
-ruby calculate-resources.rb
+ruby bin/calculate_resources.rb
 ```
 
 **Expected runtime:** 2-3 minutes
@@ -286,8 +286,8 @@ kubectx r2-friends  # or r2-besties
 **Solution:**
 ```bash
 # In a separate terminal
-kubectl port-forward -n cattle-monitoring-system \
-  svc/rancher-monitoring-prometheus 9090:9090
+kubectl port-forward -n monitoring \
+  svc/kube-prometheus-stack-prometheus 9090:9090
 ```
 
 ### "Prometheus query failed"

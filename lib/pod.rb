@@ -22,7 +22,7 @@ class Pod
   end
 
   def owner_name
-    item_json.dig(:metadata, :ownerReferences, 0, :name).sub(/-[a-z0-9]+$/, '')
+    item_json.dig(:metadata, :ownerReferences, 0, :name)&.sub(/-[a-z0-9]+$/, '')
   end
 
   def containers

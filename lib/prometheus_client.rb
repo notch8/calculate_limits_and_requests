@@ -11,8 +11,8 @@ class PrometheusClientError < StandardError
     <<~MESSAGE
       Empty response from Prometheus - make sure you have run the following in another terminal window:
 
-      kubectl port-forward -n cattle-monitoring-system \\
-      svc/rancher-monitoring-prometheus 9090:9090
+      kubectl port-forward -n monitoring \\
+      svc/kube-prometheus-stack-prometheus 9090:9090
     MESSAGE
   end
 end
