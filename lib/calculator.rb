@@ -8,8 +8,6 @@ require_relative 'calculate_resources'
 require_relative 'container'
 require_relative 'cpu'
 require_relative 'memory'
-require_relative 'node_cpu'
-require_relative 'node_memory'
 require_relative 'node'
 require_relative 'pod'
 require_relative 'prometheus_client'
@@ -19,7 +17,7 @@ PROMETHEUS_URL = 'http://localhost:9090'
 
 QUERY_CLASSES = {
   %w[cpu pod] => Cpu,
-  %w[cpu node] => NodeCpu,
+  %w[cpu node] => Cpu,
   %w[memory pod] => Memory,
-  %w[memory node] => NodeMemory
+  %w[memory node] => Memory
 }.freeze

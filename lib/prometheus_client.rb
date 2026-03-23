@@ -62,10 +62,14 @@ class PrometheusClient
   end
 
   def quantile_query_string
-    klass = QUERY_CLASSES[[compute_type, resource_type]]
-    raise 'No matching compute & resource type combination' unless klass
-
-    klass.prometheus_command(quantile)
+    case compute_type
+    when 'cpu'
+      Cpu.prometheus_command(quantile, resource_type:)
+    when 'memory'
+      Memory.prometheus_command(quantile, resource_type:)
+    else
+      raise "Unexpected compute_type: #{compute_type}. Expected either 'cpu' or 'memory'"
+    end
   end
 
   def max_memory_query_string

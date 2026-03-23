@@ -3,9 +3,9 @@
 ##
 # Represents Cpu objects
 class Cpu
-  attr_reader :request, :limit, :quantile, :type
+  attr_reader :request, :limit, :quantile, :type, :resource_type
 
-  def initialize(identifier:, current_resources:, type:)
+  def initialize(identifier:, current_resources:, type:, resource_type: 'pod')
     @quantile = Quantile.new(identifier:)
     minimums = MINIMUMS[type]
     @request = Request.new(current: current_resources.dig(:requests, :cpu),
@@ -15,12 +15,18 @@ class Cpu
                        minimum: minimums[:cpu_limit],
                        quantile: quantile.ninety_nine_in_millicores)
     @type = type
+    @resource_type = resource_type
   end
 
-  def self.prometheus_command(quantile)
-    <<~CMD.chomp
-      quantile_over_time(#{quantile}, rate(container_cpu_usage_seconds_total{container!="",namespace!~"kube-.*"}[5m])[10d:5m])
-    CMD
+  def self.prometheus_command(quantile, resource_type: 'pod')
+    case resource_type
+    when 'pod'
+      Pod.prometheus_command(quantile)
+    when 'node'
+      Node.prometheus_command(quantile)
+    else
+      raise "Unexpected resource_type: #{resource_type}. Expected either 'pod' or 'node'"
+    end
   end
 
   def self.ninety_five_quantiles
@@ -72,6 +78,25 @@ class Cpu
       (millicores / 1_000.0).to_s
     else
       "#{millicores}m"
+    end
+  end
+
+  ##
+  # Pod-specific methods related to CPU
+  class Pod
+    def self.prometheus_command(quantile)
+      query = 'quantile_over_time(%s, rate(container_cpu_usage_seconds_total{container!="",namespace!~"kube-.*"}' \
+              '[5m])[10d:5m])'
+      format(query, quantile)
+    end
+  end
+
+  ##
+  # Node-specific methods related to CPU
+  class Node
+    def self.prometheus_command(quantile)
+      query = 'quantile_over_time(%s, (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])))[10d:5m])'
+      format(query, quantile)
     end
   end
 

@@ -17,10 +17,15 @@ class Memory
     @max = Max.new(identifier:)
   end
 
-  def self.prometheus_command(quantile)
-    <<~CMD.chomp
-      quantile_over_time(#{quantile}, container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d:1m])
-    CMD
+  def self.prometheus_command(quantile, resource_type: 'pod')
+    case resource_type
+    when 'pod'
+      Pod.prometheus_command(quantile)
+    when 'node'
+      Node.prometheus_command(quantile)
+    else
+      raise "Unexpected resource_type: #{resource_type}. Expected either 'pod' or 'node'"
+    end
   end
 
   def self.ninety_five_quantiles
@@ -69,6 +74,24 @@ class Memory
       "#{mebibytes / 1024}Gi"
     else
       "#{mebibytes}Mi"
+    end
+  end
+
+  ##
+  # Pod-specific methods related to Memory
+  class Pod
+    def self.prometheus_command(quantile)
+      query = 'quantile_over_time(%s, container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d:1m])'
+      format(query, quantile)
+    end
+  end
+
+  ##
+  # Node-specific methods related to Memory
+  class Node
+    def self.prometheus_command(quantile)
+      query = 'quantile_over_time(%s, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[10d:1m])'
+      format(query, quantile)
     end
   end
 

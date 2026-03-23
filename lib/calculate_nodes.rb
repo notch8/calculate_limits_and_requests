@@ -5,8 +5,6 @@ require 'json'
 
 require_relative 'node'
 require_relative 'prometheus_client'
-require_relative 'node_cpu'
-require_relative 'node_memory'
 
 # Wrapper class for calculating appropriate sizing for Kubernetes nodes
 class CalculateNodes
