@@ -11,7 +11,10 @@ require_relative 'node_memory'
 # Wrapper class for calculating appropriate sizing for Kubernetes nodes
 class CalculateNodes
   def write_csv
-    headers = [].flatten
+    headers = %w[provider_id name node_group cpu_capacity_current memory_capacity_current
+                 cpu_95_m cpu_99_m memory_95_mi memory_99_mi memory_max_mi
+                 cpu_request_recommended_mi cpu_limit_recommended_m memory_request_recommended_mi
+                 memory_limit_recommended_mi].flatten
     CSV.open('node-right-sizing-output.csv', 'w') do |csv|
       csv << headers
       write_nodes(csv)
