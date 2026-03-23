@@ -3,9 +3,9 @@
 
 require_relative '../lib/calculator'
 begin
-  CalculateResources.new.write_csv
+  CalculateNodes.new.write_csv
 
-  puts 'CSV written to right-sizing-output.csv'
+  puts 'CSV written to node-right-sizing-output.csv'
 rescue PrometheusClientError => e
   puts "ERROR: #{e}"
 end

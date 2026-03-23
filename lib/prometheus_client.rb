@@ -21,11 +21,12 @@ end
 # Utility class for connecting with Prometheus metrics API
 # Right now this is a bit too intertwined with the "Quantile" concept
 class PrometheusClient
-  attr_reader :quantile, :compute_type
+  attr_reader :quantile, :compute_type, :resource_type
 
-  def initialize(quantile:, compute_type:)
+  def initialize(quantile:, compute_type:, resource_type: 'pod')
     @quantile = quantile
     @compute_type = compute_type
+    @resource_type = resource_type
   end
 
   def quantile_list
@@ -61,11 +62,10 @@ class PrometheusClient
   end
 
   def quantile_query_string
-    if compute_type == 'cpu'
-      Cpu.prometheus_command(quantile)
-    else
-      Memory.prometheus_command(quantile)
-    end
+    klass = QUERY_CLASSES[[compute_type, resource_type]]
+    raise 'No matching compute & resource type combination' unless klass
+
+    klass.prometheus_command(quantile)
   end
 
   def max_memory_query_string
