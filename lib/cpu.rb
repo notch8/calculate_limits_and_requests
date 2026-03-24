@@ -5,8 +5,11 @@
 class Cpu
   attr_reader :request, :limit, :quantile, :type, :resource_type
 
-  def initialize(identifier:, current_resources:, type:, resource_type: 'pod')
-    @quantile = Quantile.new(identifier:)
+  def initialize(identifier:, current_resources: nil, type: nil, resource_type: 'pod')
+    @quantile = Quantile.new(identifier:, resource_type:)
+    @resource_type = resource_type
+    return unless resource_type == 'pod'
+
     minimums = MINIMUMS[type]
     @request = Request.new(current: current_resources.dig(:requests, :cpu),
                            minimum: minimums[:cpu_request],
@@ -15,7 +18,6 @@ class Cpu
                        minimum: minimums[:cpu_limit],
                        quantile: quantile.ninety_nine_in_millicores)
     @type = type
-    @resource_type = resource_type
   end
 
   def self.prometheus_command(quantile, resource_type: 'pod')
@@ -29,12 +31,14 @@ class Cpu
     end
   end
 
-  def self.ninety_five_quantiles
-    @ninety_five_quantiles ||= PrometheusClient.new(quantile: 0.95, compute_type: 'cpu').quantile_list
+  # Doesn't know the resource_type because it's a class method, not an instance method
+  # Need to figure out a way to get the list for nodes, rather than pods
+  def self.ninety_five_quantiles(resource_type: 'pod')
+    PrometheusClient.new(quantile: 0.95, compute_type: 'cpu', resource_type:).quantile_list
   end
 
   def self.ninety_nine_quantiles
-    @ninety_nine_quantiles ||= PrometheusClient.new(quantile: 0.99, compute_type: 'cpu').quantile_list
+    PrometheusClient.new(quantile: 0.99, compute_type: 'cpu').quantile_list
   end
 
   def self.string_to_millicores(string:)
@@ -159,10 +163,11 @@ class Cpu
   ##
   # Quantiles for Cpu objects
   class Quantile
-    attr_reader :identifier
+    attr_reader :identifier, :resource_type
 
-    def initialize(identifier:)
+    def initialize(identifier:, resource_type: 'pod')
       @identifier = identifier
+      @resource_type = resource_type
     end
 
     def ninety_five_in_millicores
@@ -170,7 +175,8 @@ class Cpu
     end
 
     def ninety_five_in_cores
-      @ninety_five_in_cores ||= Cpu.ninety_five_quantiles.find do |quant|
+      Cpu.ninety_five_quantiles(resource_type:).find do |quant|
+        byebug
         quant.name == identifier
       end&.value || nil
     end

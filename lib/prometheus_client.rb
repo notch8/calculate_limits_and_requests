@@ -54,6 +54,7 @@ class PrometheusClient
     response = `#{curl_command(quantile_query_string)}`
     raise PrometheusClientError if response.empty?
 
+    # byebug
     response
   end
 

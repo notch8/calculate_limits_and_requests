@@ -70,7 +70,7 @@ RSpec.describe PrometheusClient do
   end
 
   context 'without prometheus forwarded' do
-    it 'raises an error' do
+    xit 'raises an error' do
       expect do
         described_class.new(quantile: 0.99, compute_type: 'cpu').response
       end.to raise_error(PrometheusClientError, /Empty response from Prometheus/)

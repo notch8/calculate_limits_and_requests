@@ -4,10 +4,11 @@
 # Represents a kubernetes node.
 class Node
   REGION = 'us-west-2'
-  attr_reader :item_json
+  attr_reader :item_json, :cpu
 
   def initialize(item_json)
     @item_json = item_json
+    @cpu = Cpu.new(identifier: prometheus_identifier, resource_type: 'node')
   end
 
   def name
@@ -24,8 +25,7 @@ class Node
   end
 
   def ninety_five_in_millicores
-    ''
-    # cpu.quantile.ninety_five_in_millicores
+    cpu.quantile.ninety_five_in_millicores
   end
 
   # Memory in Ki
