@@ -69,6 +69,6 @@ class PrometheusClient
   end
 
   def max_memory_query_string
-    'max_over_time(container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d])'
+    'max_over_time(container_memory_working_set_bytes{container!=""}[10d])'
   end
 end

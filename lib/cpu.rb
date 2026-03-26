@@ -19,7 +19,7 @@ class Cpu
 
   def self.prometheus_command(quantile)
     <<~CMD.chomp
-      quantile_over_time(#{quantile}, rate(container_cpu_usage_seconds_total{container!="",namespace!~"kube-.*"}[5m])[10d:5m])
+      quantile_over_time(#{quantile}, rate(container_cpu_usage_seconds_total{container!=""}[5m])[10d:5m])
     CMD
   end
 

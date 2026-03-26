@@ -43,6 +43,6 @@ class Pod
   def container_identifier(container_json:)
     item_json.dig(:status, :containerStatuses).find do |stat|
       stat[:name] == container_json[:name]
-    end[:containerID].match(%r{containerd://(?<identifier>\w*)})[:identifier]
+    end[:containerID]&.match(%r{containerd://(?<identifier>\w*)})&.[](:identifier)
   end
 end

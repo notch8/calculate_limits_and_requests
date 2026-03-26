@@ -19,7 +19,7 @@ class Memory
 
   def self.prometheus_command(quantile)
     <<~CMD.chomp
-      quantile_over_time(#{quantile}, container_memory_working_set_bytes{container!="",namespace!~"kube-.*"}[10d:1m])
+      quantile_over_time(#{quantile}, container_memory_working_set_bytes{container!=""}[10d:1m])
     CMD
   end
 
