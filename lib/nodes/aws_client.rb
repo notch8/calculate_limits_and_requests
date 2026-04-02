@@ -9,6 +9,8 @@ module Nodes
       case instance_type
       when 'm5.xlarge'
         '16384'
+      when 'm5.2xlarge'
+        '32768'
       when 'm5.4xlarge'
         '65536'
       else
