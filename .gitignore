@@ -5,4 +5,4 @@ spec/fixtures/original_backups
 
 # Ignore output
 right-sizing-output.csv
-
+node-right-sizing-output.csv

@@ -100,7 +100,7 @@ The CSV contains these key columns:
 ### Usage Metrics
 - `cpu_p95_m` - 95th percentile CPU usage (millicores)
 - `cpu_p99_m` - 99th percentile CPU usage (millicores)
-- `mem_p95_mi` - 95th percentile memory usage (Mi)
+- `mem_p95_mi` - 95th percentile memory usage (Mi - MebiBytes)
 - `mem_p99_mi` - 99th percentile memory usage (Mi)
 
 ### Recommendations

@@ -19,8 +19,11 @@ AllCops:
   - 'vendor/**/*'
   NewCops: enable
 
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/ExampleLength:
+RSpec/MultipleMemoizedHelpers:
   Enabled: false

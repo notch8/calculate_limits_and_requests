@@ -1,0 +1,113 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.4.243:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-c42jv",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.40141183956332216"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.1.23:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-hx7tb",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.570015940833328"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.4.567:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-9t7k5",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.595451492801385"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.8.910:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-k9d5b",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.585616033281253"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.1.234:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-rf7bb",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.5629573011360651"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.9.123:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-66zxh",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.7737691450177484"
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "http-metrics",
+          "instance": "10.0.5.678:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "kube-prometheus-stack-prometheus-node-exporter-fgk7c",
+          "service": "kube-prometheus-stack-prometheus-node-exporter"
+        },
+        "value": [
+          1774385925.285,
+          "0.45020780668838156"
+        ]
+      }
+    ]
+  }
+}
