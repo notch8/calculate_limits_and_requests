@@ -7,7 +7,7 @@ module Nodes
   class AwsClient
     def memory_capacity_by_instance_type(instance_type: 'm5.xlarge')
       case instance_type
-      when 'm5.xlarge'
+      when 'm5.xlarge', 't3.xlarge'
         '16384'
       when 'm5.4xlarge'
         '65536'
@@ -17,7 +17,7 @@ module Nodes
     end
 
     # This method seems to work but is untested, and having AWS set up is not documented yet
-    # def memory_capacity_by_instance_type_from_aws(instance_type:)
+    # def memory_capacity_by_instance_type(instance_type:)
     #   command = <<~CMD.chomp
     #     aws ec2 describe-instance-types \
     #       --instance-types #{instance_type} \
