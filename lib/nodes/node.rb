@@ -108,11 +108,11 @@ class Node
   end
 
   def pod_capacity_current
-    item_hash.dig(:status, :capacity, :pods)
+    item_hash.dig(:status, :capacity, :pods)&.to_i
   end
 
   def cpu_capacity_current_millicores
-    pod_capacity_current * 1_000
+    cpu_capacity_current * 1_000
   end
 
   def write_node(csv)
