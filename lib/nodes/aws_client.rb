@@ -9,7 +9,7 @@ module Nodes
       case instance_type
       when 'm5.xlarge', 't3.xlarge'
         '16384'
-      when 'm5.4xlarge'
+      when 'm5.4xlarge', 'r5.2xlarge'
         '65536'
       else
         raise "Instance type not yet implemented. instance_type: #{instance_type}"
