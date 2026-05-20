@@ -7,6 +7,7 @@ class Pod
 
   def initialize(item_json)
     @item_json = item_json
+    raise unless item_json
   end
 
   def namespace
@@ -41,6 +42,8 @@ class Pod
   private
 
   def container_identifier(container_json:)
+    # This raises an error if the Pod errored out before creating containers
+    # We might raise an error here, and then handle it in the #containers method
     item_json.dig(:status, :containerStatuses).find do |stat|
       stat[:name] == container_json[:name]
     end[:containerID].match(%r{containerd://(?<identifier>\w*)})[:identifier]

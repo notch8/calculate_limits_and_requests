@@ -60,15 +60,15 @@ module Nodes
     end
 
     def max_memory_query_string
-      'max_over_time((1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[10d:5m])'
+      'max_over_time((1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[30d:1m])'
     end
 
     def quantile_query_string
       query = if compute_type == 'cpu'
                 'quantile_over_time(%s, (1 - avg by (instance) ' \
-                  '(rate(node_cpu_seconds_total{mode="idle"}[5m])))[10d:5m])'
+                  '(rate(node_cpu_seconds_total{mode="idle"}[1m])))[30d:1m])'
               else
-                'quantile_over_time(%s, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[10d:1m])'
+                'quantile_over_time(%s, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[30d:1m])'
               end
       format(query, quantile)
     end

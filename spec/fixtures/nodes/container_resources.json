@@ -1,0 +1,1312 @@
+[
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "1",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-161.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-161.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-41.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-41.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-88.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-88.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-111.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-111.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-54.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-54.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "200Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "8000Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "1250m",
+    "memory_mib": "5Gi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "1250m",
+    "memory_mib": "5Gi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "20m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "90Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "90Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "90Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "25m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "70Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "70Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "40Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "64Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "55Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "55Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "200m",
+    "memory_mib": "300Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "50Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "128Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "128Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "128Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "128Mi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "128Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "64Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "64Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "10m",
+    "memory_mib": "64Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "2",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "500Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "200M"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "500Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "200M"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "500Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "200M"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "100Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "100Mi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "300m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "3Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "3Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "400m",
+    "memory_mib": "5Gi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "2Gi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "500m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "50m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "50m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "5Gi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "5Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "20m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "20m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "20m",
+    "memory_mib": "512Mi"
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "3500m",
+    "memory_mib": "30Gi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "3500m",
+    "memory_mib": "30Gi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "3500m",
+    "memory_mib": "30Gi"
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": "150m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": "150m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": "150m",
+    "memory_mib": "1Gi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": "16000Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "250m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "3Gi"
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "3Gi"
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "1250m",
+    "memory_mib": "6Gi"
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": "1250m",
+    "memory_mib": "6Gi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": "20m",
+    "memory_mib": "4Gi"
+  },
+  {
+    "node": "ip-10-0-3-145.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-119.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-2-64.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-38.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-197.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-1-199.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-6-128.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "256Mi"
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-5-202.us-west-2.compute.internal",
+    "cpu_millicores": null,
+    "memory_mib": null
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "250Mi"
+  },
+  {
+    "node": "ip-10-0-4-164.us-west-2.compute.internal",
+    "cpu_millicores": "100m",
+    "memory_mib": "100Mi"
+  }
+]
