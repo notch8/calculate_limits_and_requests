@@ -2,7 +2,7 @@
 
 ##
 # Represents a node in a kubernetes cluster
-class Node
+class Node # rubocop:disable Metrics/ClassLength
   def self.headers
     %w[provider_id name instance_type node_group cpu_capacity_current memory_capacity_current
        ninety_five_in_millicores ninety_nine_in_millicores ninety_five_in_mebibytes
@@ -148,7 +148,7 @@ class Node
     cpu_capacity_current * 1_000
   end
 
-  def write_node(csv)
+  def write_node(csv) # rubocop:disable Metrics/AbcSize
     csv << [provider_id, name, instance_type, node_group, cpu_capacity_current_millicores, memory_capacity_current,
             ninety_five_in_millicores, ninety_nine_in_millicores, ninety_five_in_mebibytes,
             ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, ninety_five_cpu_percent,

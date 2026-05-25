@@ -8,5 +8,8 @@ RSpec.shared_context 'with access to kubernetes', kubernetes: :metadata do
     allow(calculator).to receive(:`)
       .with('kubectl get pods --all-namespaces -o json')
       .and_return(File.read(File.open('spec/fixtures/kubernetes_pods_sanitized.json')))
+    allow(calculator).to receive(:`)
+      .with('kubectl get nodes -o json')
+      .and_return(File.read(File.open('spec/fixtures/kubernetes_nodes.json')))
   end
 end
