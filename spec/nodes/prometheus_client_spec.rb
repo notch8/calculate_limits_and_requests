@@ -7,7 +7,7 @@ RSpec.describe Nodes::PrometheusClient do
     include_context 'with nodes with access to prometheus'
     it 'can change query string based on data' do
       command = <<~YAML.chomp
-        quantile_over_time(0.95, (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])))[10d:5m])
+        quantile_over_time(0.95, (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[1m])))[30d:1m])
       YAML
       expect(cpu_95_prometheus_client.quantile_query_string).to eq(command)
     end
@@ -17,7 +17,7 @@ RSpec.describe Nodes::PrometheusClient do
 
       it 'can change query string based on data' do
         command = <<~YAML.chomp
-          quantile_over_time(0.99, (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])))[10d:5m])
+          quantile_over_time(0.99, (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[1m])))[30d:1m])
         YAML
         expect(prometheus_client.quantile_query_string).to eq(command)
       end
@@ -28,7 +28,7 @@ RSpec.describe Nodes::PrometheusClient do
 
       it 'can change query string based on data' do
         command = <<~YAML.chomp
-          quantile_over_time(0.95, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[10d:1m])
+          quantile_over_time(0.95, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[30d:1m])
         YAML
         expect(prometheus_client.quantile_query_string).to eq(command)
       end
@@ -39,7 +39,7 @@ RSpec.describe Nodes::PrometheusClient do
 
       it 'can change query string based on data' do
         command = <<~YAML.chomp
-          quantile_over_time(0.99, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[10d:1m])
+          quantile_over_time(0.99, (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))[30d:1m])
         YAML
         expect(prometheus_client.quantile_query_string).to eq(command)
       end

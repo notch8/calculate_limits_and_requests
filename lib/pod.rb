@@ -7,6 +7,7 @@ class Pod
 
   def initialize(item_json)
     @item_json = item_json
+    raise unless item_json
   end
 
   def namespace
@@ -25,14 +26,18 @@ class Pod
     item_json.dig(:metadata, :ownerReferences, 0, :name)&.sub(/-[a-z0-9]+$/, '')
   end
 
+  def node_name
+    item_json.dig(:spec, :nodeName)
+  end
+
   def containers
     item_json.dig(:spec, :containers).map do |container_json|
       Container.new(container_json, container_identifier(container_json:))
     end
   end
 
-  def write_pod_and_containers(csv)
-    item_info = [namespace, owner_name]
+  def write_pod_and_containers(csv, node_group:)
+    item_info = [namespace, owner_name, node_name, node_group]
     containers.each do |container|
       csv << [item_info, container.row].flatten
     end
@@ -41,6 +46,8 @@ class Pod
   private
 
   def container_identifier(container_json:)
+    # This raises an error if the Pod errored out before creating containers
+    # We might raise an error here, and then handle it in the #containers method
     item_json.dig(:status, :containerStatuses).find do |stat|
       stat[:name] == container_json[:name]
     end[:containerID].match(%r{containerd://(?<identifier>\w*)})[:identifier]

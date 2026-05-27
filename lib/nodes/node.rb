@@ -2,12 +2,14 @@
 
 ##
 # Represents a node in a kubernetes cluster
-class Node
+class Node # rubocop:disable Metrics/ClassLength
   def self.headers
     %w[provider_id name instance_type node_group cpu_capacity_current memory_capacity_current
        ninety_five_in_millicores ninety_nine_in_millicores ninety_five_in_mebibytes
        ninety_nine_in_mebibytes pod_capacity_current current_pod_count ninety_five_cpu_percent
-       ninety_nine_cpu_percent ninety_five_memory_percent ninety_nine_memory_percent]
+       ninety_nine_cpu_percent ninety_five_memory_percent ninety_nine_memory_percent allocated_cpu_requests
+       allocated_memory_requests allocated_cpu_percent allocated_memory_percent cpu_headroom_millicores
+       memory_headroom_mib]
   end
 
   def self.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json:)
@@ -107,18 +109,51 @@ class Node
     pod_entry[:pod_count]
   end
 
+  def allocated_cpu_requests
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+      entry[:node] == name
+    end
+    pod_entry&.dig(:cpu_millicores) || 0
+  end
+
+  def allocated_memory_requests
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+      entry[:node] == name
+    end
+    pod_entry&.dig(:memory_mib) || 0
+  end
+
+  def allocated_cpu_percent
+    allocated_cpu_requests / cpu_capacity_current_millicores.to_f
+  end
+
+  def allocated_memory_percent
+    allocated_memory_requests / memory_capacity_current.to_f
+  end
+
   def pod_capacity_current
     item_hash.dig(:status, :capacity, :pods)&.to_i
+  end
+
+  # How much headroom exists between scheduled requests and p99 actual usage
+  def cpu_headroom_millicores
+    allocated_cpu_requests - ninety_nine_in_millicores
+  end
+
+  def memory_headroom_mib
+    allocated_memory_requests - ninety_nine_in_mebibytes
   end
 
   def cpu_capacity_current_millicores
     cpu_capacity_current * 1_000
   end
 
-  def write_node(csv)
+  def write_node(csv) # rubocop:disable Metrics/AbcSize
     csv << [provider_id, name, instance_type, node_group, cpu_capacity_current_millicores, memory_capacity_current,
             ninety_five_in_millicores, ninety_nine_in_millicores, ninety_five_in_mebibytes,
             ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, ninety_five_cpu_percent,
-            ninety_nine_cpu_percent, ninety_five_memory_percent, ninety_nine_memory_percent]
+            ninety_nine_cpu_percent, ninety_five_memory_percent, ninety_nine_memory_percent, allocated_cpu_requests,
+            allocated_memory_requests, allocated_cpu_percent, allocated_memory_percent, cpu_headroom_millicores,
+            memory_headroom_mib]
   end
 end

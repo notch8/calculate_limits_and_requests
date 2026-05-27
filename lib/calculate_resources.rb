@@ -34,8 +34,19 @@ class CalculateResources
     end
   end
 
+  def node_groups
+    @node_groups ||= JSON.parse(`kubectl get nodes -o json`,
+                                symbolize_names: true)[:items].each_with_object({}) do |node, hash|
+      name = node.dig(:metadata, :name)
+      group = node.dig(:metadata, :labels, :'eks.amazonaws.com/nodegroup') ||
+              node.dig(:metadata, :labels, :'alpha.eksio/nodegroup') ||
+              'unknown'
+      hash[name] = group
+    end
+  end
+
   def write_csv
-    headers = ['namespace', 'owner', Container.headers].flatten
+    headers = ['namespace', 'owner', 'node', 'node_group', Container.headers].flatten
     CSV.open('right-sizing-output.csv', 'w') do |csv|
       csv << headers
       write_pods(csv)
@@ -44,7 +55,8 @@ class CalculateResources
 
   def write_pods(csv)
     all_pods.each do |pod|
-      pod.write_pod_and_containers(csv)
+      node_group = node_groups[pod.node_name] || 'unknown'
+      pod.write_pod_and_containers(csv, node_group:)
     end
   end
 end
