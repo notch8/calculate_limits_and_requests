@@ -47,6 +47,17 @@ RSpec.describe Pod do
     expect(pod.containers.first.identifier).to eq('362ceb96e7974476a747003788070192bb53a8c32422dc098780e76404f5ecc9')
   end
 
+  context 'when the pod errored before containers were created' do
+    let(:pod) do
+      described_class.new(pod_hash.merge(status: {}))
+    end
+
+    it 'does not raise a NoMethodError when calling containers' do
+      expect { pod.containers }.not_to raise_error(NoMethodError)
+      expect { pod.containers }.not_to raise_error
+    end
+  end
+
   context 'with multiple containers' do
     let(:pod) do
       calculator.all_pods[29]
