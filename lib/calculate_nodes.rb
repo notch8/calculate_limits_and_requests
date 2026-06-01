@@ -25,7 +25,7 @@ class CalculateNodes
     path
   end
 
-  def write_recommendations_csv(nodes: all_nodes)
+  def write_recommendations_csv(nodes: nodes_with_prometheus_data)
     path = report_path(@cluster, 'node-group-recommendations-output.csv')
     CSV.open(path, 'w') do |csv|
       csv << Nodes::NodeGroupRecommender.headers
@@ -44,9 +44,11 @@ class CalculateNodes
   end
 
   def write_nodes(csv)
-    all_nodes.each do |node|
-      node.write_node(csv)
+    skipped = all_nodes - nodes_with_prometheus_data
+    skipped.each do |node|
+      warn "WARNING: skipping #{node.name} (#{node.instance_type}) — no Prometheus data yet (node may be too new)"
     end
+    nodes_with_prometheus_data.each { |node| node.write_node(csv) }
   end
 
   def all_nodes
@@ -54,5 +56,9 @@ class CalculateNodes
                               symbolize_names: true)[:items].map do |node_hash|
                                 Node.new(node_hash, cluster: @cluster)
                               end
+  end
+
+  def nodes_with_prometheus_data
+    @nodes_with_prometheus_data ||= all_nodes.select(&:prometheus_data_available?)
   end
 end

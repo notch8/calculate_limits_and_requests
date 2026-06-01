@@ -41,6 +41,29 @@ RSpec.describe Nodes::NodeGroupRecommender do
     end
   end
 
+  describe '#t3_unlimited_surcharge' do
+    let(:t3a_medium) { { instance_type: 't3a.medium', vcpu: 2, memory_mib: 4096, price_per_hour: 0.0376 } }
+    let(:m5_xlarge)  { { instance_type: 'm5.xlarge',  vcpu: 4, memory_mib: 16384, price_per_hour: 0.192 } }
+
+    it 'returns 0 for non-burstable instances' do
+      result = recommender.send(:t3_unlimited_surcharge, m5_xlarge, 4, 5000)
+      expect(result).to eq(0)
+    end
+
+    it 'returns 0 when usage is below baseline' do
+      # 6 t3a.medium: baseline = 6 * 2 * 0.20 * 1000 = 2400m; usage 1000m is under
+      result = recommender.send(:t3_unlimited_surcharge, t3a_medium, 6, 1000)
+      expect(result).to eq(0)
+    end
+
+    it 'calculates surcharge for usage above baseline' do
+      # 6 t3a.medium: baseline = 2400m, usage = 4754m, surplus = 2354m = 2.354 vCPUs
+      # surcharge = 2.354 * 0.05 * 730 = ~85.92
+      result = recommender.send(:t3_unlimited_surcharge, t3a_medium, 6, 4754)
+      expect(result).to be_within(0.01).of(85.92)
+    end
+  end
+
   describe '#terraform_vars' do
     context 'with a regular node group' do
       it 'generates standard variable names' do
