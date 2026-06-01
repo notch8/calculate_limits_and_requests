@@ -27,8 +27,8 @@ RSpec.describe CalculateResources do
 
   describe 'generating a CSV' do
     it 'can generate a csv' do
-      calculator.write_csv
-      expect(File.exist?('right-sizing-output.csv')).to be(true)
+      path = calculator.write_csv
+      expect(File.exist?(path)).to be(true)
     end
   end
 

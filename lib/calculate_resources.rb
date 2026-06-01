@@ -27,15 +27,19 @@ MINIMUMS = {
 ##
 # Wrapper class for calculating appropriate limits and requests for Kubernetes containers
 class CalculateResources
+  def initialize(cluster:)
+    @cluster = cluster
+  end
+
   def all_pods
-    @all_pods ||= JSON.parse(`kubectl get pods --all-namespaces -o json`,
+    @all_pods ||= JSON.parse(`kubectl get pods --all-namespaces --context=#{@cluster} -o json`,
                              symbolize_names: true)[:items].map do |pod_json|
       Pod.new(pod_json)
     end
   end
 
   def node_groups
-    @node_groups ||= JSON.parse(`kubectl get nodes -o json`,
+    @node_groups ||= JSON.parse(`kubectl get nodes --context=#{@cluster} -o json`,
                                 symbolize_names: true)[:items].each_with_object({}) do |node, hash|
       name = node.dig(:metadata, :name)
       group = node.dig(:metadata, :labels, :'eks.amazonaws.com/nodegroup') ||
@@ -46,7 +50,7 @@ class CalculateResources
   end
 
   def write_csv
-    path = report_path('right-sizing-output.csv')
+    path = report_path(@cluster, 'right-sizing-output.csv')
     headers = ['namespace', 'owner', 'node', 'node_group', Container.headers].flatten
     CSV.open(path, 'w') do |csv|
       csv << headers

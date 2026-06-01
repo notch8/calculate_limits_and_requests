@@ -15,6 +15,20 @@ module Nodes
     # Candidates to return per node group
     TOP_N = 5
 
+    # T3/T3a instances burst above a baseline CPU; sustained burst accrues charges in Unlimited mode.
+    # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-credits-baseline-concepts.html
+    T3_UNLIMITED_SURCHARGE_PER_VCPU_HOUR = 0.05
+    # Baseline CPU as a fraction of one vCPU, keyed by instance size.
+    T3_BASELINE_CPU_FRACTION = {
+      'nano'    => 0.05,
+      'micro'   => 0.10,
+      'small'   => 0.20,
+      'medium'  => 0.20,
+      'large'   => 0.30,
+      'xlarge'  => 0.40,
+      '2xlarge' => 0.40
+    }.freeze
+
     # General-purpose and memory-optimized families appropriate for mixed K8s workloads.
     # Excludes compute-optimized (c*), GPU (p*, g*), storage-optimized (d*, i*, h*),
     # accelerated (inf*, trn*), and bare metal.
@@ -30,11 +44,14 @@ module Nodes
         recommended_node_count
         recommended_vcpu_per_node
         recommended_memory_gib_per_node
+        recommended_base_cost_usd
+        t3_unlimited_surcharge_usd
         recommended_monthly_cost_usd
         monthly_savings_usd
         cpu_headroom_pct
         memory_headroom_pct
         notes
+        terraform_vars
       ]
     end
 
@@ -75,14 +92,18 @@ module Nodes
 
       candidates = find_candidates(required, group_nodes.size)
 
-      candidates.first(TOP_N).map do |candidate|
+      candidates.first(TOP_N).each_with_index.map do |candidate, index|
         instance = candidate[:instance]
         node_count = candidate[:node_count]
-        monthly_cost = instance[:price_per_hour] * node_count * HOURS_PER_MONTH
+        base_cost = instance[:price_per_hour] * node_count * HOURS_PER_MONTH
+        surcharge = t3_unlimited_surcharge(instance, node_count, required[:p99_cpu_actual_millicores])
+        monthly_cost = base_cost + surcharge
         cpu_avail = instance[:vcpu] * 1000 * node_count * NODE_OVERHEAD_FACTOR
         mem_avail = instance[:memory_mib] * node_count * NODE_OVERHEAD_FACTOR
         cpu_headroom = ((cpu_avail - required[:cpu_millicores]) / cpu_avail * 100).round(1)
         mem_headroom = ((mem_avail - required[:memory_mib]) / mem_avail * 100).round(1)
+        notes = candidate[:notes].dup
+        notes = "#{notes}; burstable: cost varies with load" if surcharge.positive?
 
         [
           group_name,
@@ -93,18 +114,32 @@ module Nodes
           node_count,
           instance[:vcpu],
           (instance[:memory_mib] / 1024.0).round(1),
+          base_cost.round(2),
+          surcharge.positive? ? surcharge.round(2) : nil,
           monthly_cost.round(2),
           (current_monthly - monthly_cost).round(2),
           "#{cpu_headroom}%",
           "#{mem_headroom}%",
-          candidate[:notes]
+          notes,
+          index.zero? ? terraform_vars(group_name, instance[:instance_type], node_count) : nil
         ]
       end
     end
 
+    def t3_unlimited_surcharge(instance, node_count, p99_cpu_actual_millicores)
+      size = instance[:instance_type].split('.').last
+      baseline_fraction = T3_BASELINE_CPU_FRACTION[size]
+      return 0 unless baseline_fraction
+
+      baseline_millicores = instance[:vcpu] * baseline_fraction * 1000 * node_count
+      surplus_vcpus = [(p99_cpu_actual_millicores - baseline_millicores) / 1000.0, 0].max
+      surplus_vcpus * T3_UNLIMITED_SURCHARGE_PER_VCPU_HOUR * HOURS_PER_MONTH
+    end
+
     def aggregate_requirements(nodes)
       # Use p99 actual * headroom or allocated requests, whichever is larger
-      p99_cpu  = nodes.sum(&:ninety_nine_in_millicores) * HEADROOM_FACTOR
+      p99_cpu_actual = nodes.sum(&:ninety_nine_in_millicores)
+      p99_cpu  = p99_cpu_actual * HEADROOM_FACTOR
       p99_mem  = nodes.sum(&:ninety_nine_in_mebibytes)  * HEADROOM_FACTOR
       alloc_cpu = nodes.sum(&:allocated_cpu_requests)
       alloc_mem = nodes.sum(&:allocated_memory_requests)
@@ -112,9 +147,32 @@ module Nodes
 
       {
         cpu_millicores: [p99_cpu, alloc_cpu].max,
+        p99_cpu_actual_millicores: p99_cpu_actual,
         memory_mib: [p99_mem, alloc_mem].max,
         pod_count: pod_count
       }
+    end
+
+    def terraform_vars(group_name, instance_type, node_count)
+      desired = node_count
+      min = [desired - 1, 1].max
+      max = desired + 1
+
+      if group_name.to_s.include?('stateful')
+        <<~TERRAFORM.strip
+          stateful_node_instance_type = "#{instance_type}"
+          stateful_desired_size       = #{desired}
+          stateful_min_size           = #{min}
+          stateful_max_size           = #{max}
+        TERRAFORM
+      else
+        <<~TERRAFORM.strip
+          node_instance_type = "#{instance_type}"
+          desired_size       = #{desired}
+          min_size           = #{min}
+          max_size           = #{max}
+        TERRAFORM
+      end
     end
 
     def find_candidates(required, current_count)

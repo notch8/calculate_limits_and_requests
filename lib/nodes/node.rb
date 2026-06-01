@@ -19,10 +19,11 @@ class Node # rubocop:disable Metrics/ClassLength
   end
 
   REGION = 'us-west-2'
-  attr_reader :item_hash
+  attr_reader :item_hash, :cluster
 
-  def initialize(item_hash)
+  def initialize(item_hash, cluster:)
     @item_hash = item_hash
+    @cluster = cluster
   end
 
   # Identifier in Rancher and Kubectl
@@ -111,21 +112,21 @@ class Node # rubocop:disable Metrics/ClassLength
   end
 
   def current_pod_count
-    pod_entry = Nodes::AllNodes.current_pod_counts.find do |entry|
+    pod_entry = Nodes::AllNodes.current_pod_counts(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry[:pod_count]
   end
 
   def allocated_cpu_requests
-    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry&.dig(:cpu_millicores) || 0
   end
 
   def allocated_memory_requests
-    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry&.dig(:memory_mib) || 0
