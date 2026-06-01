@@ -3,9 +3,7 @@
 
 require_relative '../lib/calculate_resources'
 begin
-  CalculateResources.new.write_csv
-
-  puts 'CSV written to right-sizing-output.csv'
+  puts "CSV written to #{CalculateResources.new.write_csv}"
 rescue PrometheusClientError => e
   puts "ERROR: #{e}"
 end

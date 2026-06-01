@@ -2,31 +2,26 @@
 
 module Nodes
   ##
-  # Get data about instance types from AWS
-  # I'd like to find a way to be able to do this without having to have AWS credentials set up
+  # Get data about instance types from AWS pricing CSV
   class AwsClient
-    def memory_capacity_by_instance_type(instance_type: 'm5.xlarge')
-      case instance_type
-      when 'm5.xlarge', 't3.xlarge'
-        '16384'
-      when 'm5.4xlarge', 'r5.2xlarge'
-        '65536'
-      else
-        raise "Instance type not yet implemented. instance_type: #{instance_type}"
-      end
+    PRICING_CSV_PATH = File.join(__dir__, '../../data/ec2_instance_pricing.csv')
+
+    def memory_capacity_by_instance_type(instance_type:)
+      instance = pricing_data[instance_type]
+      raise "Instance type not found in pricing data: #{instance_type}" unless instance
+
+      instance[:memory_mib].to_s
     end
 
-    # This method seems to work but is untested, and having AWS set up is not documented yet
-    # def memory_capacity_by_instance_type(instance_type:)
-    #   command = <<~CMD.chomp
-    #     aws ec2 describe-instance-types \
-    #       --instance-types #{instance_type} \
-    #       --query "InstanceTypes[*].{type:InstanceType,memory_mib:MemoryInfo.SizeInMiB,vcpus:VCpuInfo.DefaultVCpus}" \
-    #       --output json
-    #   CMD
-    #   raw = `#{command}`
-    #   instance_info = JSON.parse(raw).to_h { |instance| [instance['type'], instance] }
-    #   instance_info.dig(instance_type, 'memory_mib')
-    # end
+    def pricing_data
+      @pricing_data ||= CSV.read(PRICING_CSV_PATH, headers: true).each_with_object({}) do |row, hash|
+        hash[row['instance_type']] = {
+          instance_type: row['instance_type'],
+          vcpu: row['vcpu'].to_i,
+          memory_mib: row['memory_mib'].to_i,
+          price_per_hour: row['price_per_hour'].to_f
+        }
+      end
+    end
   end
 end

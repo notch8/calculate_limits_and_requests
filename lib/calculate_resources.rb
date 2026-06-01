@@ -46,11 +46,13 @@ class CalculateResources
   end
 
   def write_csv
+    path = report_path('right-sizing-output.csv')
     headers = ['namespace', 'owner', 'node', 'node_group', Container.headers].flatten
-    CSV.open('right-sizing-output.csv', 'w') do |csv|
+    CSV.open(path, 'w') do |csv|
       csv << headers
       write_pods(csv)
     end
+    path
   end
 
   def write_pods(csv)
