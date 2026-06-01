@@ -20,12 +20,12 @@ module Nodes
     T3_UNLIMITED_SURCHARGE_PER_VCPU_HOUR = 0.05
     # Baseline CPU as a fraction of one vCPU, keyed by instance size.
     T3_BASELINE_CPU_FRACTION = {
-      'nano'    => 0.05,
-      'micro'   => 0.10,
-      'small'   => 0.20,
-      'medium'  => 0.20,
-      'large'   => 0.30,
-      'xlarge'  => 0.40,
+      'nano' => 0.05,
+      'micro' => 0.10,
+      'small' => 0.20,
+      'medium' => 0.20,
+      'large' => 0.30,
+      'xlarge' => 0.40,
       '2xlarge' => 0.40
     }.freeze
 
@@ -140,7 +140,7 @@ module Nodes
       # Use p99 actual * headroom or allocated requests, whichever is larger
       p99_cpu_actual = nodes.sum(&:ninety_nine_in_millicores)
       p99_cpu  = p99_cpu_actual * HEADROOM_FACTOR
-      p99_mem  = nodes.sum(&:ninety_nine_in_mebibytes)  * HEADROOM_FACTOR
+      p99_mem  = nodes.sum(&:ninety_nine_in_mebibytes) * HEADROOM_FACTOR
       alloc_cpu = nodes.sum(&:allocated_cpu_requests)
       alloc_mem = nodes.sum(&:allocated_memory_requests)
       pod_count = nodes.sum(&:current_pod_count)
