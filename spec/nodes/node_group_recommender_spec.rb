@@ -27,17 +27,55 @@ RSpec.describe Nodes::NodeGroupRecommender do
       expect(data_rows.first.length).to eq(described_class.headers.length)
     end
 
-    it 'puts terraform_vars only on the top recommendation row per group' do
+    it 'includes terraform_vars on every recommendation row' do
       rows = []
       recommender.write_csv(rows)
 
-      groups = rows.reject(&:empty?).group_by { |row| row[0] }
-      groups.each_value do |group_rows|
-        expect(group_rows.first.last).not_to be_nil
-        group_rows[1..].each do |row|
-          expect(row.last).to be_nil
-        end
+      rows.reject(&:empty?).each do |row|
+        expect(row.last).not_to be_nil
+        expect(row.last).to include('instance_type')
+        expect(row.last).to include('desired_size')
       end
+    end
+  end
+
+  describe '#find_candidates pod budget' do
+    # Build a minimal stub node that satisfies the recommender interface
+    def stub_node(pod_count:, daemonset_count:)
+      instance_double(Node,
+                      instance_type: 'm5.xlarge',
+                      node_group: 'test-group',
+                      ninety_nine_in_millicores: 500,
+                      ninety_nine_in_mebibytes: 1024,
+                      allocated_cpu_requests: 400,
+                      allocated_memory_requests: 800,
+                      current_pod_count: pod_count,
+                      daemonset_pod_count: daemonset_count)
+    end
+
+    it 'rejects a candidate when daemonsets alone fill every pod slot' do
+      # Instance has 17 max_pods (t3.medium), daemonsets use 17 — no room for anything else
+      nodes = Array.new(2) { stub_node(pod_count: 17, daemonset_count: 17) }
+      rec = described_class.new(nodes)
+      instance = { instance_type: 't3.medium', vcpu: 2, memory_mib: 4096,
+                   price_per_hour: 0.04, max_pods: 17 }
+      allow(rec).to receive(:candidate_instances).and_return([instance])
+      rows = []
+      rec.write_csv(rows)
+      expect(rows.reject(&:empty?)).to be_empty
+    end
+
+    it 'accepts a candidate when available slots exceed regular pod count' do
+      # 2 nodes, 10 pods each (8 daemonsets + 2 regular), switching to instance with 29 max_pods
+      # available_for_regular = 29*2 - 8*2 = 42 > 4 regular pods needed
+      nodes = Array.new(2) { stub_node(pod_count: 10, daemonset_count: 8) }
+      rec = described_class.new(nodes)
+      instance = { instance_type: 'm5.large', vcpu: 2, memory_mib: 8192,
+                   price_per_hour: 0.096, max_pods: 29 }
+      allow(rec).to receive(:candidate_instances).and_return([instance])
+      rows = []
+      rec.write_csv(rows)
+      expect(rows.reject(&:empty?)).not_to be_empty
     end
   end
 

@@ -44,6 +44,7 @@ module Nodes
         recommended_node_count
         recommended_vcpu_per_node
         recommended_memory_gib_per_node
+        recommended_max_pods_per_node
         recommended_base_cost_usd
         t3_unlimited_surcharge_usd
         recommended_monthly_cost_usd
@@ -92,7 +93,7 @@ module Nodes
 
       candidates = find_candidates(required, group_nodes.size)
 
-      candidates.first(TOP_N).each_with_index.map do |candidate, index|
+      candidates.first(TOP_N).map do |candidate|
         instance = candidate[:instance]
         node_count = candidate[:node_count]
         base_cost = instance[:price_per_hour] * node_count * HOURS_PER_MONTH
@@ -114,6 +115,7 @@ module Nodes
           node_count,
           instance[:vcpu],
           (instance[:memory_mib] / 1024.0).round(1),
+          instance[:max_pods] || PODS_PER_NODE,
           base_cost.round(2),
           surcharge.positive? ? surcharge.round(2) : nil,
           monthly_cost.round(2),
@@ -121,7 +123,7 @@ module Nodes
           "#{cpu_headroom}%",
           "#{mem_headroom}%",
           notes,
-          index.zero? ? terraform_vars(group_name, instance[:instance_type], node_count) : nil
+          terraform_vars(group_name, instance[:instance_type], node_count)
         ]
       end
     end
@@ -143,13 +145,21 @@ module Nodes
       p99_mem  = nodes.sum(&:ninety_nine_in_mebibytes) * HEADROOM_FACTOR
       alloc_cpu = nodes.sum(&:allocated_cpu_requests)
       alloc_mem = nodes.sum(&:allocated_memory_requests)
-      pod_count = nodes.sum(&:current_pod_count)
+      total_pod_count = nodes.sum(&:current_pod_count)
+
+      # DaemonSets consume one pod slot per node regardless of node count, so we must
+      # account for them separately. We take the average daemonset count across nodes
+      # in the group (they should all be equal, but average guards against edge cases).
+      daemonset_count = (nodes.sum(&:daemonset_pod_count) / nodes.size.to_f).ceil
+      regular_pod_count = total_pod_count - nodes.size * daemonset_count
 
       {
         cpu_millicores: [p99_cpu, alloc_cpu].max,
         p99_cpu_actual_millicores: p99_cpu_actual,
         memory_mib: [p99_mem, alloc_mem].max,
-        pod_count: pod_count
+        total_pod_count: total_pod_count,
+        daemonset_count: daemonset_count,
+        regular_pod_count: regular_pod_count
       }
     end
 
@@ -181,9 +191,14 @@ module Nodes
       # Try node counts from 1 up to current + 2; stop early once we've found enough cheap options
       max_count = current_count + 2
       (1..max_count).each do |node_count|
-        next if node_count * PODS_PER_NODE < required[:pod_count]
-
         candidate_instances.each do |instance|
+          pods_per_node = instance[:max_pods] || PODS_PER_NODE
+          # Total pod slots in the recommended config, minus slots consumed by daemonsets
+          # on every node, must exceed the regular (non-daemonset) pods we need to schedule.
+          total_pod_capacity       = pods_per_node * node_count
+          daemonset_pod_capacity   = required[:daemonset_count] * node_count
+          available_for_regular    = total_pod_capacity - daemonset_pod_capacity
+          next unless available_for_regular > required[:regular_pod_count]
           cpu_avail = instance[:vcpu] * 1000 * node_count * NODE_OVERHEAD_FACTOR
           mem_avail = instance[:memory_mib] * node_count * NODE_OVERHEAD_FACTOR
 

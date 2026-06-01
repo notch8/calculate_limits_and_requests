@@ -6,10 +6,10 @@ class Node # rubocop:disable Metrics/ClassLength
   def self.headers
     %w[provider_id name instance_type node_group cpu_capacity_current memory_capacity_current
        ninety_five_in_millicores ninety_nine_in_millicores ninety_five_in_mebibytes
-       ninety_nine_in_mebibytes pod_capacity_current current_pod_count ninety_five_cpu_percent
-       ninety_nine_cpu_percent ninety_five_memory_percent ninety_nine_memory_percent allocated_cpu_requests
-       allocated_memory_requests allocated_cpu_percent allocated_memory_percent cpu_headroom_millicores
-       memory_headroom_mib]
+       ninety_nine_in_mebibytes pod_capacity_current current_pod_count daemonset_pod_count
+       ninety_five_cpu_percent ninety_nine_cpu_percent ninety_five_memory_percent
+       ninety_nine_memory_percent allocated_cpu_requests allocated_memory_requests
+       allocated_cpu_percent allocated_memory_percent cpu_headroom_millicores memory_headroom_mib]
   end
 
   def self.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json:)
@@ -125,6 +125,10 @@ class Node # rubocop:disable Metrics/ClassLength
     pod_entry[:pod_count]
   end
 
+  def daemonset_pod_count
+    Nodes::AllNodes.daemonset_pod_counts_by_node(cluster:)[name] || 0
+  end
+
   def allocated_cpu_requests
     pod_entry = Nodes::AllNodes.sum_of_resources_by_node(cluster:).find do |entry|
       entry[:node] == name
@@ -167,9 +171,9 @@ class Node # rubocop:disable Metrics/ClassLength
   def write_node(csv) # rubocop:disable Metrics/AbcSize
     csv << [provider_id, name, instance_type, node_group, cpu_capacity_current_millicores, memory_capacity_current,
             ninety_five_in_millicores, ninety_nine_in_millicores, ninety_five_in_mebibytes,
-            ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, ninety_five_cpu_percent,
-            ninety_nine_cpu_percent, ninety_five_memory_percent, ninety_nine_memory_percent, allocated_cpu_requests,
-            allocated_memory_requests, allocated_cpu_percent, allocated_memory_percent, cpu_headroom_millicores,
-            memory_headroom_mib]
+            ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, daemonset_pod_count,
+            ninety_five_cpu_percent, ninety_nine_cpu_percent, ninety_five_memory_percent,
+            ninety_nine_memory_percent, allocated_cpu_requests, allocated_memory_requests,
+            allocated_cpu_percent, allocated_memory_percent, cpu_headroom_millicores, memory_headroom_mib]
   end
 end

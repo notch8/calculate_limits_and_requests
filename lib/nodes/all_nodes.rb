@@ -38,6 +38,22 @@ module Nodes
       end
     end
 
+    # Returns a hash of node_name => daemonset_pod_count for running daemonset pods.
+    # DaemonSets occupy slots on every node, so they must be subtracted from max_pods
+    # before computing how many regular pods a candidate configuration can absorb.
+    def self.daemonset_pod_counts_by_node(cluster:)
+      command = <<~CMD.chomp
+        kubectl get pods -A --context=#{cluster} \
+          --field-selector=status.phase=Running \
+          -o json | \
+          jq '[.items[] | select(.metadata.ownerReferences != null) | select(.metadata.ownerReferences[] | .kind == "DaemonSet")] | group_by(.spec.nodeName) | map({node: .[0].spec.nodeName, count: length}) | map({(.node): .count}) | add // {}'
+      CMD
+      raw = `#{command}`
+      JSON.parse(raw)
+    rescue JSON::ParserError
+      {}
+    end
+
     def self.container_resources_json(cluster:)
       command = <<~CMD.chomp
         kubectl get pods -A --context=#{cluster} \

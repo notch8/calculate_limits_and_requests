@@ -13,6 +13,7 @@ module Nodes
     :allocated_cpu_requests,
     :allocated_memory_requests,
     :current_pod_count,
+    :daemonset_pod_count,
     keyword_init: true
   ) do
     def self.from_csv_row(row)
@@ -23,7 +24,8 @@ module Nodes
         ninety_nine_in_mebibytes: row['ninety_nine_in_mebibytes'].to_f,
         allocated_cpu_requests: row['allocated_cpu_requests'].to_f,
         allocated_memory_requests: row['allocated_memory_requests'].to_f,
-        current_pod_count: row['current_pod_count'].to_i
+        current_pod_count: row['current_pod_count'].to_i,
+        daemonset_pod_count: row['daemonset_pod_count'].to_i
       )
     end
   end
