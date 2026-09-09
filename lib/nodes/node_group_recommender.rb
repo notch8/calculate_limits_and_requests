@@ -76,22 +76,38 @@ module Nodes
       @pricing_data ||= Nodes::AwsClient.new.pricing_data
     end
 
+    def sorted_candidate_instances
+      @sorted_candidate_instances ||= @candidate_instances.sort_by { |i| i[:price_per_hour] }
+    end
+
     def candidate_instances
       @candidate_instances ||= pricing_data.values.select do |instance|
-        family = instance[:instance_type].sub(/\..+/, '')
-        PREFERRED_FAMILIES.include?(family) &&
-          instance[:vcpu].between?(2, 32) &&
-          instance[:memory_mib] >= 4096
-      end.sort_by { |i| i[:price_per_hour] }
+        valid_candidate(instance:)
+      end
+    end
+
+    def instance_family(instance:)
+      instance[:instance_type].sub(/\..+/, '')
+    end
+
+    def valid_candidate(instance:)
+      family = instance_family(instance:)
+
+      return instance if PREFERRED_FAMILIES.include?(family) &&
+                         instance[:vcpu].between?(2, 32) &&
+                         instance[:memory_mib] >= 4096
+
+      nil
     end
 
     def recommend_for_group(group_name, group_nodes)
       required = aggregate_requirements(group_nodes)
       current_type = group_nodes.first.instance_type
       current_price = pricing_data.dig(current_type, :price_per_hour) || 0
-      current_monthly = current_price * group_nodes.size * HOURS_PER_MONTH
+      node_size = group_nodes.size
+      current_monthly = current_price * node_size * HOURS_PER_MONTH
 
-      candidates = find_candidates(required, group_nodes.size)
+      candidates = find_candidates(required, node_size)
 
       candidates.first(TOP_N).map do |candidate|
         instance = candidate[:instance]
@@ -109,7 +125,7 @@ module Nodes
         [
           group_name,
           current_type,
-          group_nodes.size,
+          node_size,
           current_monthly.round(2),
           instance[:instance_type],
           node_count,
@@ -146,12 +162,13 @@ module Nodes
       alloc_cpu = nodes.sum(&:allocated_cpu_requests)
       alloc_mem = nodes.sum(&:allocated_memory_requests)
       total_pod_count = nodes.sum(&:current_pod_count)
+      node_size = nodes.size
 
       # DaemonSets consume one pod slot per node regardless of node count, so we must
       # account for them separately. We take the average daemonset count across nodes
       # in the group (they should all be equal, but average guards against edge cases).
-      daemonset_count = (nodes.sum(&:daemonset_pod_count) / nodes.size.to_f).ceil
-      regular_pod_count = total_pod_count - nodes.size * daemonset_count
+      daemonset_count = (nodes.sum(&:daemonset_pod_count) / node_size.to_f).ceil
+      regular_pod_count = total_pod_count - (node_size * daemonset_count)
 
       {
         cpu_millicores: [p99_cpu, alloc_cpu].max,
@@ -199,6 +216,7 @@ module Nodes
           daemonset_pod_capacity   = required[:daemonset_count] * node_count
           available_for_regular    = total_pod_capacity - daemonset_pod_capacity
           next unless available_for_regular > required[:regular_pod_count]
+
           cpu_avail = instance[:vcpu] * 1000 * node_count * NODE_OVERHEAD_FACTOR
           mem_avail = instance[:memory_mib] * node_count * NODE_OVERHEAD_FACTOR
 

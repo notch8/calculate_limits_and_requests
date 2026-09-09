@@ -81,7 +81,7 @@ RSpec.describe Nodes::NodeGroupRecommender do
 
   describe '#t3_unlimited_surcharge' do
     let(:t3a_medium) { { instance_type: 't3a.medium', vcpu: 2, memory_mib: 4096, price_per_hour: 0.0376 } }
-    let(:m5_xlarge)  { { instance_type: 'm5.xlarge',  vcpu: 4, memory_mib: 16384, price_per_hour: 0.192 } }
+    let(:m5_xlarge)  { { instance_type: 'm5.xlarge',  vcpu: 4, memory_mib: 16_384, price_per_hour: 0.192 } }
 
     it 'returns 0 for non-burstable instances' do
       result = recommender.send(:t3_unlimited_surcharge, m5_xlarge, 4, 5000)

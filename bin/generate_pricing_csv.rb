@@ -15,6 +15,7 @@
 
 require 'json'
 require 'csv'
+require 'byebug'
 
 PROFILE = ARGV.find { |a| a.start_with?('--profile=') }&.sub('--profile=', '') || 'default'
 OUTPUT_PATH = File.join(__dir__, '../data/ec2_instance_pricing.csv')
@@ -22,7 +23,7 @@ OUTPUT_PATH = File.join(__dir__, '../data/ec2_instance_pricing.csv')
 def aws(service, subcommand, extra_args = '')
   cmd = "aws #{service} #{subcommand} --profile=#{PROFILE} #{extra_args} --output json"
   raw = `#{cmd}`
-  raise "AWS CLI error running: #{cmd}\n#{raw}" unless $?.success?
+  raise "AWS CLI error running: #{cmd}\n#{raw}" unless $CHILD_STATUS.success?
 
   JSON.parse(raw)
 end
@@ -45,9 +46,7 @@ loop do
     max_enis = type.dig('NetworkInfo', 'MaximumNetworkInterfaces')
     ips_per_eni = type.dig('NetworkInfo', 'Ipv4AddressesPerInterface')
 
-    max_pods = if max_enis && ips_per_eni
-                 (max_enis * (ips_per_eni - 1)) + 2
-               end
+    max_pods = ((max_enis * (ips_per_eni - 1)) + 2 if max_enis && ips_per_eni)
 
     instance_data[name] = {
       instance_type: name,
@@ -92,7 +91,7 @@ loop do
     on_demand = product.dig('terms', 'OnDemand')
     next unless on_demand
 
-    price_per_unit = on_demand.values.first&.dig('priceDimensions')&.values&.first&.dig('pricePerUnit', 'USD')
+    price_per_unit = on_demand.values.dig(0, 'priceDimensions').values.dig(0, 'pricePerUnit', 'USD')
     next if price_per_unit.nil? || price_per_unit.to_f.zero?
 
     pricing[instance_type] = price_per_unit.to_f
@@ -108,9 +107,10 @@ puts "\nFound pricing for #{pricing.size} instance types."
 # ---------------------------------------------------------------------------
 # 3. Merge and write CSV
 # ---------------------------------------------------------------------------
-rows = instance_data.values
-  .select { |i| pricing.key?(i[:instance_type]) }
-  .map do |i|
+
+def rows(instance_data:, pricing:)
+  instance_types_with_pricing(instance_data:, pricing:)
+    .map do |i|
     {
       instance_type: i[:instance_type],
       vcpu: i[:vcpu],
@@ -119,7 +119,14 @@ rows = instance_data.values
       max_pods: i[:max_pods]
     }
   end
-  .sort_by { |r| r[:instance_type] }
+end
+
+def instance_types_with_pricing(instance_data:, pricing:)
+  instance_data.values
+               .select { |i| pricing.key?(i[:instance_type]) }
+end
+
+rows = rows(instance_data:, pricing:).sort_by { |r| r[:instance_type] }
 
 CSV.open(OUTPUT_PATH, 'w') do |csv|
   csv << %w[instance_type vcpu memory_mib price_per_hour max_pods]
