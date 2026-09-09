@@ -53,7 +53,6 @@ RSpec.describe Pod do
     end
 
     it 'does not raise a NoMethodError when calling containers' do
-      expect { pod.containers }.not_to raise_error(NoMethodError)
       expect { pod.containers }.not_to raise_error
     end
   end

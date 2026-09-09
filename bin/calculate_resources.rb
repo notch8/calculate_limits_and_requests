@@ -1,11 +1,19 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/calculate_resources'
-begin
-  CalculateResources.new.write_csv
+# Usage:
+#   ./bin/calculate_resources.rb <cluster>
 
-  puts 'CSV written to right-sizing-output.csv'
+require_relative '../lib/port_forward'
+require_relative '../lib/calculate_resources'
+
+cluster = ARGV.find { |a| !a.start_with?('--') }
+abort('Usage: calculate_resources.rb <cluster>') unless cluster
+
+PortForward.start(cluster: cluster)
+
+begin
+  puts "CSV written to #{CalculateResources.new(cluster: cluster).write_csv}"
 rescue PrometheusClientError => e
   puts "ERROR: #{e}"
 end

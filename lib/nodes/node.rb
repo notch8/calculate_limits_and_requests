@@ -6,10 +6,10 @@ class Node # rubocop:disable Metrics/ClassLength
   def self.headers
     %w[provider_id name instance_type node_group cpu_capacity_current memory_capacity_current
        ninety_five_in_millicores ninety_nine_in_millicores ninety_five_in_mebibytes
-       ninety_nine_in_mebibytes pod_capacity_current current_pod_count ninety_five_cpu_percent
-       ninety_nine_cpu_percent ninety_five_memory_percent ninety_nine_memory_percent allocated_cpu_requests
-       allocated_memory_requests allocated_cpu_percent allocated_memory_percent cpu_headroom_millicores
-       memory_headroom_mib]
+       ninety_nine_in_mebibytes pod_capacity_current current_pod_count daemonset_pod_count
+       ninety_five_cpu_percent ninety_nine_cpu_percent ninety_five_memory_percent
+       ninety_nine_memory_percent allocated_cpu_requests allocated_memory_requests
+       allocated_cpu_percent allocated_memory_percent cpu_headroom_millicores memory_headroom_mib]
   end
 
   def self.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json:)
@@ -19,10 +19,11 @@ class Node # rubocop:disable Metrics/ClassLength
   end
 
   REGION = 'us-west-2'
-  attr_reader :item_hash
+  attr_reader :item_hash, :cluster
 
-  def initialize(item_hash)
+  def initialize(item_hash, cluster:)
     @item_hash = item_hash
+    @cluster = cluster
   end
 
   # Identifier in Rancher and Kubectl
@@ -62,62 +63,81 @@ class Node # rubocop:disable Metrics/ClassLength
     item_hash.dig(:status, :addresses).find { |addr| addr[:type] == 'InternalIP' }[:address]
   end
 
+  def prometheus_data_available?
+    !Node.map_prometheus_to_node(
+      prometheus_identifier:,
+      prometheus_response_json: Nodes::PrometheusClient.new(quantile: 0.99, compute_type: 'cpu').response_json
+    ).nil?
+  end
+
   def ninety_five_cpu_percent
-    client = Nodes::PrometheusClient.new(quantile: 0.95, compute_type: 'cpu')
-    our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
-    our_quantile.dig(:value, 1).to_f
+    @ninety_five_cpu_percent ||= begin
+      client = Nodes::PrometheusClient.new(quantile: 0.95, compute_type: 'cpu')
+      our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
+      our_quantile&.dig(:value, 1)&.to_f
+    end
   end
 
   def ninety_five_in_millicores
-    ninety_five_cpu_percent * cpu_capacity_current * 1_000
+    @ninety_five_in_millicores ||= ninety_five_cpu_percent&.*(cpu_capacity_current * 1_000)
   end
 
   def ninety_nine_cpu_percent
-    client = Nodes::PrometheusClient.new(quantile: 0.99, compute_type: 'cpu')
-    our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
-    our_quantile.dig(:value, 1).to_f
+    @ninety_nine_cpu_percent ||= begin
+      client = Nodes::PrometheusClient.new(quantile: 0.99, compute_type: 'cpu')
+      our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
+      our_quantile&.dig(:value, 1)&.to_f
+    end
   end
 
   def ninety_nine_in_millicores
-    ninety_nine_cpu_percent * cpu_capacity_current * 1_000
+    @ninety_nine_in_millicores ||= ninety_nine_cpu_percent&.*(cpu_capacity_current * 1_000)
   end
 
   def ninety_five_memory_percent
-    client = Nodes::PrometheusClient.new(quantile: 0.95, compute_type: 'memory')
-    our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
-    our_quantile.dig(:value, 1).to_f
+    @ninety_five_memory_percent ||= begin
+      client = Nodes::PrometheusClient.new(quantile: 0.95, compute_type: 'memory')
+      our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
+      our_quantile&.dig(:value, 1)&.to_f
+    end
   end
 
   def ninety_five_in_mebibytes
-    ninety_five_memory_percent * memory_capacity_current
+    @ninety_five_in_mebibytes ||= ninety_five_memory_percent&.*(memory_capacity_current)
   end
 
   def ninety_nine_memory_percent
-    client = Nodes::PrometheusClient.new(quantile: 0.99, compute_type: 'memory')
-    our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
-    our_quantile.dig(:value, 1).to_f
+    @ninety_nine_memory_percent ||= begin
+      client = Nodes::PrometheusClient.new(quantile: 0.99, compute_type: 'memory')
+      our_quantile = Node.map_prometheus_to_node(prometheus_identifier:, prometheus_response_json: client.response_json)
+      our_quantile&.dig(:value, 1)&.to_f
+    end
   end
 
   def ninety_nine_in_mebibytes
-    ninety_nine_memory_percent * memory_capacity_current
+    @ninety_nine_in_mebibytes ||= ninety_nine_memory_percent&.*(memory_capacity_current)
   end
 
   def current_pod_count
-    pod_entry = Nodes::AllNodes.current_pod_counts.find do |entry|
+    pod_entry = Nodes::AllNodes.current_pod_counts(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry[:pod_count]
   end
 
+  def daemonset_pod_count
+    Nodes::AllNodes.daemonset_pod_counts_by_node(cluster:)[name] || 0
+  end
+
   def allocated_cpu_requests
-    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry&.dig(:cpu_millicores) || 0
   end
 
   def allocated_memory_requests
-    pod_entry = Nodes::AllNodes.sum_of_resources_by_node.find do |entry|
+    pod_entry = Nodes::AllNodes.sum_of_resources_by_node(cluster:).find do |entry|
       entry[:node] == name
     end
     pod_entry&.dig(:memory_mib) || 0
@@ -151,9 +171,9 @@ class Node # rubocop:disable Metrics/ClassLength
   def write_node(csv) # rubocop:disable Metrics/AbcSize
     csv << [provider_id, name, instance_type, node_group, cpu_capacity_current_millicores, memory_capacity_current,
             ninety_five_in_millicores, ninety_nine_in_millicores, ninety_five_in_mebibytes,
-            ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, ninety_five_cpu_percent,
-            ninety_nine_cpu_percent, ninety_five_memory_percent, ninety_nine_memory_percent, allocated_cpu_requests,
-            allocated_memory_requests, allocated_cpu_percent, allocated_memory_percent, cpu_headroom_millicores,
-            memory_headroom_mib]
+            ninety_nine_in_mebibytes, pod_capacity_current, current_pod_count, daemonset_pod_count,
+            ninety_five_cpu_percent, ninety_nine_cpu_percent, ninety_five_memory_percent,
+            ninety_nine_memory_percent, allocated_cpu_requests, allocated_memory_requests,
+            allocated_cpu_percent, allocated_memory_percent, cpu_headroom_millicores, memory_headroom_mib]
   end
 end

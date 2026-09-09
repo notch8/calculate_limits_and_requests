@@ -411,3 +411,4 @@ After applying recommendations to r2-friends and r2-besties:
 2. **Set up monitoring** - Alert on containers approaching limits
 3. **Implement LimitRanges** - Set cluster-wide defaults for new deployments
 4. **Consider HPA** - For variable workloads, use Horizontal Pod Autoscaler
+

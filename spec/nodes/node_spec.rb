@@ -38,7 +38,7 @@ RSpec.describe Node do
     }.transform_keys(&:to_sym)
   end
 
-  let(:node) { described_class.new(node_hash) }
+  let(:node) { described_class.new(node_hash, cluster: cluster) }
 
   it 'has a node name matching Rancher' do
     expect(node.name).to eq('ip-10-0-4-243.us-west-2.compute.internal')
